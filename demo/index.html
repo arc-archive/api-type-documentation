@@ -101,7 +101,7 @@
         }
       };
       app.setTypeData = function(id) {
-        const d = app.amfModel[0]['http://raml.org/vocabularies/document#declares'];
+        const d = app.amfModel[0][ApiElements.Amf.ns.raml.vocabularies.document + 'declares'];
         const type = d.find((item) => item['@id'] === id);
         if (!type) {
           console.error('Type not found');

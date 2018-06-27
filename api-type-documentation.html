@@ -8,6 +8,8 @@
 <link rel="import" href="../api-annotation-document/api-annotation-document.html">
 <link rel="import" href="../api-resource-example-document/api-resource-example-document.html">
 <link rel="import" href="../api-schema-document/api-schema-document.html">
+<link rel="import" href="../amf-helper-mixin/amf-helper-mixin.html">
+
 <dom-module id="api-type-documentation">
   <template>
     <style include="markdown-styles"></style>
@@ -19,6 +21,11 @@
 
     h1 {
       @apply --arc-font-headline;
+      @apply --api-type-documentation-title;
+    }
+
+    :host([narrow]) h1 {
+      @apply --api-type-documentation-title-narrow;
     }
     </style>
     <template is="dom-if" if="[[aware]]">
@@ -40,10 +47,10 @@
         <h5 class="examples-section-title">Examples</h5>
         <api-resource-example-document examples="[[examples]]"></api-resource-example-document>
       </template>
-      <api-type-document amf-model="[[amfModel]]" type="[[type]]"></api-type-document>
+      <api-type-document amf-model="[[amfModel]]" type="[[type]]" narrow="[[narrow]]"></api-type-document>
     </template>
     <template is="dom-if" if="[[isSchema]]">
-      <api-schema-document schema-model="[[type]]"></api-schema-document>
+      <api-schema-document shape="[[type]]" amf-model="[[amfModel]]"></api-schema-document>
     </template>
   </template>
   <script>
@@ -59,13 +66,17 @@
    * Custom property | Description | Default
    * ----------------|-------------|----------
    * `--api-type-documentation` | Mixin applied to this elment | `{}`
+   * `--arc-font-headline` | Theme mixin, applied to the title | `{}`
+   * `--api-type-documentation-title` | Mixin applied to the title | `{}`
+   * `--api-type-documentation-title-narrow` | Mixin applied to the title in narrow layout | `{}`
    *
    * @customElement
    * @polymer
    * @demo demo/index.html
    * @memberof ApiElements
+   * @appliesMixin ApiElements.AmfHelperMixin
    */
-  class ApiTypeDocumentation extends Polymer.Element {
+  class ApiTypeDocumentation extends ApiElements.AmfHelperMixin(Polymer.Element) {
     static get is() { return 'api-type-documentation'; }
     static get properties() {
       return {
@@ -141,7 +152,14 @@
         hasExamples: {
           type: Boolean,
           computed: '_computeHasExamples(examples)'
-        }
+        },
+        /**
+         * Set to render a mobile friendly view.
+         */
+         narrow: {
+           type: Boolean,
+           reflectToAttribute: true
+         }
       };
     }
 
@@ -172,9 +190,9 @@
       if (!shape) {
         return;
       }
-      let name = this._getValue(shape, 'http://schema.org/name');
+      let name = this._getValue(shape, this.ns.schema.schemaName);
       if (!name) {
-        name = this._getValue(shape, 'http://www.w3.org/ns/shacl#name');
+        name = this._getValue(shape, this.ns.w3.shacl.name + 'name');
       }
       return name;
     }
@@ -185,7 +203,7 @@
      * @return {String|undefined}
      */
     _computeDescription(shape) {
-      return shape && this._getValue(shape, 'http://schema.org/description');
+      return shape && this._getValue(shape, this.ns.schema.desc);
     }
     /**
      * Computes value for `hasCustomProperties` property.
@@ -194,7 +212,7 @@
      * @return {Boolean}
      */
     _computeHasCustomProperties(shape) {
-      return (shape && 'http://raml.org/vocabularies/document#customDomainProperties' in shape);
+      return (shape && this.ns.raml.vocabularies.document + 'customDomainProperties' in shape);
     }
     /**
      * Computes value for `isSchema` property.
@@ -210,7 +228,7 @@
       if (!types || !types.length) {
         return;
       }
-      return types.indexOf('http://www.w3.org/ns/shacl#SchemaShape') !== -1;
+      return types.indexOf(this.ns.w3.shacl.name + 'SchemaShape') !== -1;
     }
     /**
      * Computes `examples` property from AMF model.
@@ -219,7 +237,7 @@
      * @return {Array|undefined} List of examples in the type
      */
     _computeExamples(shape) {
-      return shape && shape['http://raml.org/vocabularies/document#examples'];
+      return shape && shape[this.ns.raml.vocabularies.document + 'examples'];
     }
     /**
      * Computes value for `hasExamples`
