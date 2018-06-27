@@ -19,6 +19,11 @@
 
     h1 {
       @apply --arc-font-headline;
+      @apply --api-type-documentation-title;
+    }
+
+    :host([narrow]) h1 {
+      @apply --api-type-documentation-title-narrow;
     }
     </style>
     <template is="dom-if" if="[[aware]]">
@@ -40,10 +45,10 @@
         <h5 class="examples-section-title">Examples</h5>
         <api-resource-example-document examples="[[examples]]"></api-resource-example-document>
       </template>
-      <api-type-document amf-model="[[amfModel]]" type="[[type]]"></api-type-document>
+      <api-type-document amf-model="[[amfModel]]" type="[[type]]" narrow="[[narrow]]"></api-type-document>
     </template>
     <template is="dom-if" if="[[isSchema]]">
-      <api-schema-document schema-model="[[type]]"></api-schema-document>
+      <api-schema-document shape="[[type]]" amf-model="[[amfModel]]"></api-schema-document>
     </template>
   </template>
   <script>
@@ -59,13 +64,17 @@
    * Custom property | Description | Default
    * ----------------|-------------|----------
    * `--api-type-documentation` | Mixin applied to this elment | `{}`
+   * `--arc-font-headline` | Theme mixin, applied to the title | `{}`
+   * `--api-type-documentation-title` | Mixin applied to the title | `{}`
+   * `--api-type-documentation-title-narrow` | Mixin applied to the title in narrow layout | `{}`
    *
    * @customElement
    * @polymer
    * @demo demo/index.html
    * @memberof ApiElements
+   * @appliesMixin ApiElements.AmfHelperMixin
    */
-  class ApiTypeDocumentation extends Polymer.Element {
+  class ApiTypeDocumentation extends ApiElements.AmfHelperMixin(Polymer.Element) {
     static get is() { return 'api-type-documentation'; }
     static get properties() {
       return {
@@ -141,7 +150,14 @@
         hasExamples: {
           type: Boolean,
           computed: '_computeHasExamples(examples)'
-        }
+        },
+        /**
+         * Set to render a mobile friendly view.
+         */
+         narrow: {
+           type: Boolean,
+           reflectToAttribute: true
+         }
       };
     }
 
