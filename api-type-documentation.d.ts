@@ -18,6 +18,7 @@
 /// <reference path="../api-annotation-document/api-annotation-document.d.ts" />
 /// <reference path="../api-resource-example-document/api-resource-example-document.d.ts" />
 /// <reference path="../api-schema-document/api-schema-document.d.ts" />
+/// <reference path="../amf-helper-mixin/amf-helper-mixin.d.ts" />
 
 declare namespace ApiElements {
 
@@ -33,13 +34,13 @@ declare namespace ApiElements {
    * Custom property | Description | Default
    * ----------------|-------------|----------
    * `--api-type-documentation` | Mixin applied to this elment | `{}`
+   * `--arc-font-headline` | Theme mixin, applied to the title | `{}`
+   * `--api-type-documentation-title` | Mixin applied to the title | `{}`
+   * `--api-type-documentation-title-narrow` | Mixin applied to the title in narrow layout | `{}`
    */
-  class ApiTypeDocumentation extends Polymer.Element {
-
-    /**
-     * `raml-aware` scope property to use.
-     */
-    aware: string|null|undefined;
+  class ApiTypeDocumentation extends
+    ApiElements.AmfHelperMixin(
+    Polymer.Element) {
 
     /**
      * Generated AMF json/ld model form the API spec.
@@ -50,6 +51,11 @@ declare namespace ApiElements {
      * It is only usefult for the element to resolve references.
      */
     amfModel: object|any[]|null;
+
+    /**
+     * `raml-aware` scope property to use.
+     */
+    aware: string|null|undefined;
 
     /**
      * A type definition to render.
@@ -95,6 +101,11 @@ declare namespace ApiElements {
     readonly hasExamples: boolean|null|undefined;
 
     /**
+     * Set to render a mobile friendly view.
+     */
+    narrow: boolean|null|undefined;
+
+    /**
      * Gets a signle scalar value from a model.
      *
      * @param model Amf model to extract the value from.
@@ -102,11 +113,6 @@ declare namespace ApiElements {
      * @returns Value for key
      */
     _getValue(model: object|null, key: String|null): any|null;
-
-    /**
-     * Computes `typeTitle` property
-     */
-    _computeTitle(shape: any): String|null|undefined;
 
     /**
      * Computes `description` property
@@ -121,6 +127,11 @@ declare namespace ApiElements {
      * @param shape AMF `supportedOperation` model
      */
     _computeHasCustomProperties(shape: object|null): Boolean|null;
+
+    /**
+     * Computes `typeTitle` property
+     */
+    _computeTitle(shape: any): String|null|undefined;
 
     /**
      * Computes value for `isSchema` property.

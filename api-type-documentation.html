@@ -8,6 +8,8 @@
 <link rel="import" href="../api-annotation-document/api-annotation-document.html">
 <link rel="import" href="../api-resource-example-document/api-resource-example-document.html">
 <link rel="import" href="../api-schema-document/api-schema-document.html">
+<link rel="import" href="../amf-helper-mixin/amf-helper-mixin.html">
+
 <dom-module id="api-type-documentation">
   <template>
     <style include="markdown-styles"></style>
@@ -188,9 +190,9 @@
       if (!shape) {
         return;
       }
-      let name = this._getValue(shape, 'http://schema.org/name');
+      let name = this._getValue(shape, this.ns.schema.schemaName);
       if (!name) {
-        name = this._getValue(shape, 'http://www.w3.org/ns/shacl#name');
+        name = this._getValue(shape, this.ns.w3.shacl.name + 'name');
       }
       return name;
     }
@@ -201,7 +203,7 @@
      * @return {String|undefined}
      */
     _computeDescription(shape) {
-      return shape && this._getValue(shape, 'http://schema.org/description');
+      return shape && this._getValue(shape, this.ns.schema.desc);
     }
     /**
      * Computes value for `hasCustomProperties` property.
@@ -210,7 +212,7 @@
      * @return {Boolean}
      */
     _computeHasCustomProperties(shape) {
-      return (shape && 'http://raml.org/vocabularies/document#customDomainProperties' in shape);
+      return (shape && this.ns.raml.vocabularies.document + 'customDomainProperties' in shape);
     }
     /**
      * Computes value for `isSchema` property.
@@ -226,7 +228,7 @@
       if (!types || !types.length) {
         return;
       }
-      return types.indexOf('http://www.w3.org/ns/shacl#SchemaShape') !== -1;
+      return types.indexOf(this.ns.w3.shacl.name + 'SchemaShape') !== -1;
     }
     /**
      * Computes `examples` property from AMF model.
@@ -235,7 +237,7 @@
      * @return {Array|undefined} List of examples in the type
      */
     _computeExamples(shape) {
-      return shape && shape['http://raml.org/vocabularies/document#examples'];
+      return shape && shape[this.ns.raml.vocabularies.document + 'examples'];
     }
     /**
      * Computes value for `hasExamples`

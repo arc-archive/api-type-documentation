@@ -15,7 +15,8 @@ AmfLoader.load = function(index) {
         reject(e);
         return;
       }
-      const d = data[0]['http://raml.org/vocabularies/document#declares'];
+      const ns = ApiElements.Amf.ns;
+      const d = data[0][ns.raml.vocabularies.document + 'declares'];
       resolve([data, d[index]]);
     });
     xhr.addEventListener('error',
