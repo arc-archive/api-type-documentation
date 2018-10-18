@@ -1,9 +1,10 @@
 const AmfLoader = {};
-AmfLoader.load = function(index) {
+AmfLoader.load = function(index, compact) {
   index = index || 0;
+  const file = '/demo-api' + (compact ? '-compact' : '') + '.json';
   const url = location.protocol + '//' + location.host +
     location.pathname.substr(0, location.pathname.lastIndexOf('/'))
-    .replace('/test', '/demo') + '/amf-model.json';
+    .replace('/test', '/demo') + file;
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.addEventListener('load', (e) => {
@@ -16,8 +17,17 @@ AmfLoader.load = function(index) {
         return;
       }
       const ns = ApiElements.Amf.ns;
-      const d = data[0][ns.raml.vocabularies.document + 'declares'];
-      resolve([data, d[index]]);
+      const original = data;
+      if (data instanceof Array) {
+        data = data[0];
+      }
+      const decKey = compact ? 'doc:declares' :
+        ns.raml.vocabularies.document + 'declares';
+      let declares = data[decKey];
+      if (!(declares instanceof Array)) {
+        declares = [declares];
+      }
+      resolve([original, declares[index]]);
     });
     xhr.addEventListener('error',
       () => reject(new Error('Unable to load model file')));
