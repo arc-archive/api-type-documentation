@@ -35,7 +35,7 @@
       <h1 class="title">[[typeTitle]]</h1>
     </template>
     <template is="dom-if" if="[[hasCustomProperties]]">
-      <api-annotation-document shape="[[type]]"></api-annotation-document>
+      <api-annotation-document amf-model="[[amfModel]]" shape="[[type]]"></api-annotation-document>
     </template>
     <template is="dom-if" if="[[description]]">
       <marked-element markdown="[[description]]">
@@ -45,7 +45,7 @@
     <template is="dom-if" if="[[!isSchema]]">
       <template is="dom-if" if="[[hasExamples]]">
         <h5 class="examples-section-title">Examples</h5>
-        <api-resource-example-document examples="[[examples]]"></api-resource-example-document>
+        <api-resource-example-document amf-model="[[amfModel]]" examples="[[examples]]"></api-resource-example-document>
       </template>
       <api-type-document amf-model="[[amfModel]]" type="[[type]]" narrow="[[narrow]]"></api-type-document>
     </template>
@@ -57,7 +57,7 @@
   /**
    * `api-type-documentation`
    *
-   * A documentation module for RAML types (resources) using AMF data model
+   * A documentation module for RAML types (resources) using AMF data model.
    *
    * ## Styling
    *
@@ -77,7 +77,7 @@
    * @appliesMixin ApiElements.AmfHelperMixin
    */
   class ApiTypeDocumentation extends ApiElements.AmfHelperMixin(Polymer.Element) {
-    static get is() { return 'api-type-documentation'; }
+    static get is() {return 'api-type-documentation';}
     static get properties() {
       return {
         /**
@@ -162,28 +162,10 @@
          }
       };
     }
-
-    /**
-     * Gets a signle scalar value from a model.
-     * @param {Object} model Amf model to extract the value from.
-     * @param {String} key Model key to search for the value
-     * @return {any} Value for key
-     */
-    _getValue(model, key) {
-      let data = (model && model[key]);
-      if (!data || !(data instanceof Array)) {
-        return;
-      }
-      data = data[0];
-      if (!data) {
-        return;
-      }
-      return data['@value'];
-    }
     /**
      * Computes `typeTitle` property
      *
-     * @param {Object} type AMF model for data type
+     * @param {Object} shape AMF model for data type
      * @return {String|undefined}
      */
     _computeTitle(shape) {
@@ -206,15 +188,6 @@
       return shape && this._getValue(shape, this.ns.schema.desc);
     }
     /**
-     * Computes value for `hasCustomProperties` property.
-     *
-     * @param {Object} shape AMF `supportedOperation` model
-     * @return {Boolean}
-     */
-    _computeHasCustomProperties(shape) {
-      return (shape && this.ns.raml.vocabularies.document + 'customDomainProperties' in shape);
-    }
-    /**
      * Computes value for `isSchema` property.
      *
      * @param {Object} shape AMF `supportedOperation` model
@@ -224,11 +197,7 @@
       if (!shape) {
         return;
       }
-      const types = shape['@type'];
-      if (!types || !types.length) {
-        return;
-      }
-      return types.indexOf(this.ns.w3.shacl.name + 'SchemaShape') !== -1;
+      return this._hasType(shape, this.ns.w3.shacl.name + 'SchemaShape');
     }
     /**
      * Computes `examples` property from AMF model.
@@ -237,7 +206,12 @@
      * @return {Array|undefined} List of examples in the type
      */
     _computeExamples(shape) {
-      return shape && shape[this.ns.raml.vocabularies.document + 'examples'];
+      const key = this._getAmfKey(this.ns.raml.vocabularies.document + 'examples');
+      let value = shape && shape[key];
+      if (value && !(value instanceof Array)) {
+        value = [value];
+      }
+      return value;
     }
     /**
      * Computes value for `hasExamples`

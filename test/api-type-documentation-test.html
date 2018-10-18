@@ -71,105 +71,112 @@
       });
     });
     /* global AmfLoader */
-    suite('Type object', () => {
-      let element;
-      let amf;
-      let type;
-      suiteSetup(() => {
-        return AmfLoader.load(16)
-        .then((data) => {
-          amf = data[0];
-          type = data[1];
+    suite('AMF data model tests', () => {
+      [
+        ['Full AMF model', false],
+        ['Compact AMF model', true]
+      ].forEach((item) => {
+        suite('Type object - ' + item[0], () => {
+          let element;
+          let amf;
+          let type;
+          suiteSetup(() => {
+            return AmfLoader.load(16, item[1])
+            .then((data) => {
+              amf = data[0];
+              type = data[1];
+            });
+          });
+
+          setup((done) => {
+            element = fixture('Basic');
+            element.amfModel = amf;
+            element.type = type;
+            flush(() => done());
+          });
+
+          test('typeTitle is computed', () => {
+            assert.equal(element.typeTitle, 'EnurableType');
+          });
+
+          test('hasCustomProperties is computed', () => {
+            assert.isTrue(element.hasCustomProperties);
+          });
+
+          test('Renders api-annotation-document', () => {
+            const node = element.shadowRoot.querySelector('api-annotation-document');
+            assert.ok(node);
+          });
+
+          test('description is computed', () => {
+            assert.typeOf(element.description, 'string');
+          });
+
+          test('Renders marked-element', () => {
+            const node = element.shadowRoot.querySelector('marked-element');
+            assert.ok(node);
+          });
+
+          test('isSchema is false', () => {
+            assert.isFalse(element.isSchema);
+          });
+
+          test('hasExamples is computed', () => {
+            assert.isTrue(element.hasExamples);
+          });
+
+          test('Renders api-resource-example-document', () => {
+            const node = element.shadowRoot.querySelector('api-resource-example-document');
+            assert.ok(node);
+          });
+
+          test('api-schema-document is not in the DOM', () => {
+            const node = element.shadowRoot.querySelector('api-schema-document');
+            assert.notOk(node);
+          });
         });
-      });
 
-      setup((done) => {
-        element = fixture('Basic');
-        element.amfModel = amf;
-        element.type = type;
-        flush(() => done());
-      });
+        suite('Schema object - ' + item[0], () => {
+          let element;
+          let amf;
+          let type;
+          suiteSetup(() => {
+            return AmfLoader.load(11, item[1])
+            .then((data) => {
+              amf = data[0];
+              type = data[1];
+            });
+          });
 
-      test('typeTitle is computed', () => {
-        assert.equal(element.typeTitle, 'EnurableType');
-      });
+          setup((done) => {
+            element = fixture('Basic');
+            element.amfModel = amf;
+            element.type = type;
+            flush(() => done());
+          });
 
-      test('hasCustomProperties is computed', () => {
-        assert.isTrue(element.hasCustomProperties);
-      });
+          test('typeTitle is computed', () => {
+            assert.equal(element.typeTitle, 'XmlSchema');
+          });
 
-      test('Renders api-annotation-document', () => {
-        const node = element.shadowRoot.querySelector('api-annotation-document');
-        assert.ok(node);
-      });
+          test('hasCustomProperties is computed', () => {
+            assert.isTrue(element.hasCustomProperties);
+          });
 
-      test('description is computed', () => {
-        assert.typeOf(element.description, 'string');
-      });
+          test('Renders api-annotation-document', () => {
+            const node = element.shadowRoot.querySelector('api-annotation-document');
+            assert.ok(node);
+          });
 
-      test('Renders marked-element', () => {
-        const node = element.shadowRoot.querySelector('marked-element');
-        assert.ok(node);
-      });
+          test('isSchema is true', () => {
+            assert.isTrue(element.isSchema);
+          });
 
-      test('isSchema is false', () => {
-        assert.isFalse(element.isSchema);
-      });
-
-      test('hasExamples is computed', () => {
-        assert.isTrue(element.hasExamples);
-      });
-
-      test('Renders api-resource-example-document', () => {
-        const node = element.shadowRoot.querySelector('api-resource-example-document');
-        assert.ok(node);
-      });
-
-      test('api-schema-document is not in the DOM', () => {
-        const node = element.shadowRoot.querySelector('api-schema-document');
-        assert.notOk(node);
-      });
-    });
-
-    suite('Schema object', () => {
-      let element;
-      let amf;
-      let type;
-      suiteSetup(() => {
-        return AmfLoader.load(11)
-        .then((data) => {
-          amf = data[0];
-          type = data[1];
+          test('Renders api-schema-document', () => {
+            const node = element.shadowRoot.querySelector('api-schema-document');
+            assert.ok(node);
+          });
         });
-      });
-
-      setup((done) => {
-        element = fixture('Basic');
-        element.amfModel = amf;
-        element.type = type;
-        flush(() => done());
-      });
-
-      test('typeTitle is computed', () => {
-        assert.equal(element.typeTitle, 'XmlSchema');
-      });
-
-      test('hasCustomProperties is computed', () => {
-        assert.isTrue(element.hasCustomProperties);
-      });
-
-      test('Renders api-annotation-document', () => {
-        const node = element.shadowRoot.querySelector('api-annotation-document');
-        assert.ok(node);
-      });
-
-      test('isSchema is true', () => {
-        assert.isTrue(element.isSchema);
-      });
-
-      test('Renders api-schema-document', () => {
-        const node = element.shadowRoot.querySelector('api-schema-document');
-        assert.ok(node);
       });
     });
   });
