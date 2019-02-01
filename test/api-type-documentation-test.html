@@ -121,8 +121,13 @@
             assert.isFalse(element.isSchema);
           });
 
-          test('hasExamples is computed', () => {
-            assert.isTrue(element.hasExamples);
+          test('hasExamples is computed', (done) => {
+            flush(() => {
+              Polymer.RenderStatus.afterNextRender(element, () => {
+                assert.isTrue(element.hasExamples);
+                done();
+              });
+            });
           });
 
           test('Renders api-resource-example-document', () => {

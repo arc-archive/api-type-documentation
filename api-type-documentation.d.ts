@@ -8,6 +8,10 @@
  *   api-type-documentation.html
  */
 
+
+// tslint:disable:variable-name Describing an API that's defined elsewhere.
+// tslint:disable:no-any describes the API as best we are able today
+
 /// <reference path="../polymer/types/polymer-element.d.ts" />
 /// <reference path="../polymer/types/lib/elements/dom-if.d.ts" />
 /// <reference path="../raml-aware/raml-aware.d.ts" />
@@ -91,14 +95,9 @@ declare namespace ApiElements {
     readonly isSchema: boolean|null|undefined;
 
     /**
-     * Computed value of examples in the body model.
-     */
-    readonly examples: Array<object|null>|null;
-
-    /**
      * Computed valie if examples are set.
      */
-    readonly hasExamples: boolean|null|undefined;
+    hasExamples: boolean|null|undefined;
 
     /**
      * Set to render a mobile friendly view.
@@ -106,11 +105,17 @@ declare namespace ApiElements {
     narrow: boolean|null|undefined;
 
     /**
+     * A media type to use to generate examples.
+     */
+    mediaType: string|null|undefined;
+
+    /**
      * Computes `description` property
      *
      * @param shape AMF model for data type
      */
     _computeDescription(shape: object|null): String|null|undefined;
+    _typeChanged(): void;
 
     /**
      * Computes `typeTitle` property
@@ -125,21 +130,6 @@ declare namespace ApiElements {
      * @param shape AMF `supportedOperation` model
      */
     _computeIsSchema(shape: object|null): Boolean|null;
-
-    /**
-     * Computes `examples` property from AMF model.
-     *
-     * @param shape AMF `supportedOperation` model
-     * @returns List of examples in the type
-     */
-    _computeExamples(shape: object|null): any[]|null|undefined;
-
-    /**
-     * Computes value for `hasExamples`
-     *
-     * @param examples Current `examples`
-     */
-    _computeHasExamples(examples: any[]|null): Boolean|null;
   }
 }
 

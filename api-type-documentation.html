@@ -43,10 +43,10 @@
       </marked-element>
     </template>
     <template is="dom-if" if="[[!isSchema]]">
-      <template is="dom-if" if="[[hasExamples]]">
+      <div hidden$="[[!hasExamples]]">
         <h5 class="examples-section-title">Examples</h5>
-        <api-resource-example-document amf-model="[[amfModel]]" examples="[[examples]]"></api-resource-example-document>
-      </template>
+        <api-resource-example-document amf-model="[[amfModel]]" examples="[[type]]" has-examples="{{hasExamples}}" media-type="application/json"></api-resource-example-document>
+      </div>
       <api-type-document amf-model="[[amfModel]]" type="[[type]]" narrow="[[narrow]]"></api-type-document>
     </template>
     <template is="dom-if" if="[[isSchema]]">
@@ -105,7 +105,7 @@
          * - `http://raml.org/vocabularies/shapes#ScalarShape` (single property)
          * @type {Object|Array}
          */
-        type: Object,
+        type: {type: Object, observer: '_typeChanged'},
         /**
          * Computed value, title of the type.
          */
@@ -138,29 +138,25 @@
           computed: '_computeIsSchema(type)'
         },
         /**
-         * Computed value of examples in the body model.
-         *
-         * @type {Array<Object>}
-         */
-        examples: {
-          type: Array,
-          computed: '_computeExamples(type)'
-        },
-        /**
          * Computed valie if examples are set.
          */
-        hasExamples: {
-          type: Boolean,
-          computed: '_computeHasExamples(examples)'
-        },
+        hasExamples: {type: Boolean, value: false},
         /**
          * Set to render a mobile friendly view.
          */
          narrow: {
            type: Boolean,
            reflectToAttribute: true
-         }
+         },
+         /**
+          * A media type to use to generate examples.
+          */
+         mediaType: String
       };
+    }
+
+    _typeChanged() {
+      this.hasExamples = false;
     }
     /**
      * Computes `typeTitle` property
@@ -198,29 +194,6 @@
         return;
       }
       return this._hasType(shape, this.ns.w3.shacl.name + 'SchemaShape');
-    }
-    /**
-     * Computes `examples` property from AMF model.
-     *
-     * @param {Object} shape AMF `supportedOperation` model
-     * @return {Array|undefined} List of examples in the type
-     */
-    _computeExamples(shape) {
-      const key = this._getAmfKey(this.ns.raml.vocabularies.document + 'examples');
-      let value = shape && shape[key];
-      if (value && !(value instanceof Array)) {
-        value = [value];
-      }
-      return value;
-    }
-    /**
-     * Computes value for `hasExamples`
-     *
-     * @param {?Array} examples Current `examples`
-     * @return {Boolean}
-     */
-    _computeHasExamples(examples) {
-      return !!(examples && examples.length);
     }
   }
   window.customElements.define(ApiTypeDocumentation.is, ApiTypeDocumentation);
