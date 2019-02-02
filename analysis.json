@@ -84,12 +84,11 @@
             },
             "end": {
               "line": 104,
-              "column": 54
+              "column": 20
             }
           },
           "metadata": {
             "polymer": {
-              "observer": "\"_typeChanged\"",
               "attributeType": "Object"
             }
           }
@@ -1949,7 +1948,7 @@
             },
             "end": {
               "line": 104,
-              "column": 54
+              "column": 20
             }
           },
           "metadata": {},
