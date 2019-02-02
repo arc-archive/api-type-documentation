@@ -13,11 +13,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 96,
+              "line": 93,
               "column": 8
             },
             "end": {
-              "line": 96,
+              "line": 93,
               "column": 24
             }
           },
@@ -58,11 +58,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 85,
+              "line": 82,
               "column": 8
             },
             "end": {
-              "line": 85,
+              "line": 82,
               "column": 21
             }
           },
@@ -79,11 +79,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 107,
+              "line": 104,
               "column": 8
             },
             "end": {
-              "line": 107,
+              "line": 104,
               "column": 54
             }
           },
@@ -101,11 +101,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 111,
+              "line": 108,
               "column": 8
             },
             "end": {
-              "line": 114,
+              "line": 111,
               "column": 9
             }
           },
@@ -123,11 +123,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 118,
+              "line": 115,
               "column": 8
             },
             "end": {
-              "line": 121,
+              "line": 118,
               "column": 9
             }
           },
@@ -145,11 +145,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 126,
+              "line": 123,
               "column": 8
             },
             "end": {
-              "line": 129,
+              "line": 126,
               "column": 9
             }
           },
@@ -167,11 +167,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 134,
+              "line": 131,
               "column": 8
             },
             "end": {
-              "line": 138,
+              "line": 135,
               "column": 9
             }
           },
@@ -184,39 +184,17 @@
           "defaultValue": "false"
         },
         {
-          "name": "hasExamples",
-          "type": "boolean | null | undefined",
-          "description": "Computed valie if examples are set.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 142,
-              "column": 8
-            },
-            "end": {
-              "line": 142,
-              "column": 50
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "attributeType": "Boolean"
-            }
-          },
-          "defaultValue": "false"
-        },
-        {
           "name": "narrow",
           "type": "boolean | null | undefined",
           "description": "Set to render a mobile friendly view.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 146,
+              "line": 139,
               "column": 9
             },
             "end": {
-              "line": 149,
+              "line": 142,
               "column": 10
             }
           },
@@ -233,11 +211,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 153,
+              "line": 146,
               "column": 9
             },
             "end": {
-              "line": 153,
+              "line": 146,
               "column": 26
             }
           },
@@ -598,11 +576,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 182,
+              "line": 171,
               "column": 4
             },
             "end": {
-              "line": 184,
+              "line": 173,
               "column": 5
             }
           },
@@ -1837,36 +1815,16 @@
           "inheritedFrom": "ApiElements.AmfHelperMixin"
         },
         {
-          "name": "_typeChanged",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 157,
-              "column": 4
-            },
-            "end": {
-              "line": 159,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
           "name": "_computeTitle",
           "description": "Computes `typeTitle` property",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 166,
+              "line": 155,
               "column": 4
             },
             "end": {
-              "line": 175,
+              "line": 164,
               "column": 5
             }
           },
@@ -1888,11 +1846,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 191,
+              "line": 180,
               "column": 4
             },
             "end": {
-              "line": 196,
+              "line": 185,
               "column": 5
             }
           },
@@ -1919,11 +1877,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 78,
+          "line": 73,
           "column": 2
         },
         "end": {
-          "line": 197,
+          "line": 186,
           "column": 3
         }
       },
@@ -1936,11 +1894,11 @@
           "description": "Generated AMF json/ld model form the API spec.\nThe element assumes the object of the first array item to be a\ntype of `\"http://raml.org/vocabularies/document#Document`\non AMF vocabulary.\n\nIt is only usefult for the element to resolve references.",
           "sourceRange": {
             "start": {
-              "line": 96,
+              "line": 93,
               "column": 8
             },
             "end": {
-              "line": 96,
+              "line": 93,
               "column": 24
             }
           },
@@ -1970,11 +1928,11 @@
           "description": "`raml-aware` scope property to use.",
           "sourceRange": {
             "start": {
-              "line": 85,
+              "line": 82,
               "column": 8
             },
             "end": {
-              "line": 85,
+              "line": 82,
               "column": 21
             }
           },
@@ -1986,11 +1944,11 @@
           "description": "A type definition to render.\nThis should be a one of the following AMF types:\n\n- `http://www.w3.org/ns/shacl#NodeShape` (Object)\n- `http://raml.org/vocabularies/shapes#UnionShape` (Union)\n- `http://raml.org/vocabularies/shapes#ArrayShape` (Array)\n- `http://raml.org/vocabularies/shapes#ScalarShape` (single property)",
           "sourceRange": {
             "start": {
-              "line": 107,
+              "line": 104,
               "column": 8
             },
             "end": {
-              "line": 107,
+              "line": 104,
               "column": 54
             }
           },
@@ -2002,11 +1960,11 @@
           "description": "Computed value, title of the type.",
           "sourceRange": {
             "start": {
-              "line": 111,
+              "line": 108,
               "column": 8
             },
             "end": {
-              "line": 114,
+              "line": 111,
               "column": 9
             }
           },
@@ -2018,11 +1976,11 @@
           "description": "Computed value of method description from `method` property.",
           "sourceRange": {
             "start": {
-              "line": 118,
+              "line": 115,
               "column": 8
             },
             "end": {
-              "line": 121,
+              "line": 118,
               "column": 9
             }
           },
@@ -2034,11 +1992,11 @@
           "description": "Computed value from current `method`. True if the model contains\ncustom properties (annotations in RAML).",
           "sourceRange": {
             "start": {
-              "line": 126,
+              "line": 123,
               "column": 8
             },
             "end": {
-              "line": 129,
+              "line": 126,
               "column": 9
             }
           },
@@ -2050,28 +2008,12 @@
           "description": "Computed value, true when passed model represents a schema\n(like XML)",
           "sourceRange": {
             "start": {
-              "line": 134,
+              "line": 131,
               "column": 8
             },
             "end": {
-              "line": 138,
+              "line": 135,
               "column": 9
-            }
-          },
-          "metadata": {},
-          "type": "boolean | null | undefined"
-        },
-        {
-          "name": "has-examples",
-          "description": "Computed valie if examples are set.",
-          "sourceRange": {
-            "start": {
-              "line": 142,
-              "column": 8
-            },
-            "end": {
-              "line": 142,
-              "column": 50
             }
           },
           "metadata": {},
@@ -2082,11 +2024,11 @@
           "description": "Set to render a mobile friendly view.",
           "sourceRange": {
             "start": {
-              "line": 146,
+              "line": 139,
               "column": 9
             },
             "end": {
-              "line": 149,
+              "line": 142,
               "column": 10
             }
           },
@@ -2098,11 +2040,11 @@
           "description": "A media type to use to generate examples.",
           "sourceRange": {
             "start": {
-              "line": 153,
+              "line": 146,
               "column": 9
             },
             "end": {
-              "line": 153,
+              "line": 146,
               "column": 26
             }
           },

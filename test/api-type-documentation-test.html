@@ -121,20 +121,6 @@
             assert.isFalse(element.isSchema);
           });
 
-          test('hasExamples is computed', (done) => {
-            flush(() => {
-              Polymer.RenderStatus.afterNextRender(element, () => {
-                assert.isTrue(element.hasExamples);
-                done();
-              });
-            });
-          });
-
-          test('Renders api-resource-example-document', () => {
-            const node = element.shadowRoot.querySelector('api-resource-example-document');
-            assert.ok(node);
-          });
-
           test('api-schema-document is not in the DOM', () => {
             const node = element.shadowRoot.querySelector('api-schema-document');
             assert.notOk(node);

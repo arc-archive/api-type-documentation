@@ -6,7 +6,6 @@
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../api-type-document/api-type-document.html">
 <link rel="import" href="../api-annotation-document/api-annotation-document.html">
-<link rel="import" href="../api-resource-example-document/api-resource-example-document.html">
 <link rel="import" href="../api-schema-document/api-schema-document.html">
 <link rel="import" href="../amf-helper-mixin/amf-helper-mixin.html">
 
@@ -43,11 +42,7 @@
       </marked-element>
     </template>
     <template is="dom-if" if="[[!isSchema]]">
-      <div hidden$="[[!hasExamples]]">
-        <h5 class="examples-section-title">Examples</h5>
-        <api-resource-example-document amf-model="[[amfModel]]" examples="[[type]]" has-examples="{{hasExamples}}" media-type="application/json"></api-resource-example-document>
-      </div>
-      <api-type-document amf-model="[[amfModel]]" type="[[type]]" narrow="[[narrow]]"></api-type-document>
+      <api-type-document amf-model="[[amfModel]]" type="[[type]]" narrow="[[narrow]]" media-type="[[mediaType]]"></api-type-document>
     </template>
     <template is="dom-if" if="[[isSchema]]">
       <api-schema-document shape="[[type]]" amf-model="[[amfModel]]"></api-schema-document>
@@ -77,7 +72,9 @@
    * @appliesMixin ApiElements.AmfHelperMixin
    */
   class ApiTypeDocumentation extends ApiElements.AmfHelperMixin(Polymer.Element) {
-    static get is() {return 'api-type-documentation';}
+    static get is() {
+      return 'api-type-documentation';
+    }
     static get properties() {
       return {
         /**
@@ -138,10 +135,6 @@
           computed: '_computeIsSchema(type)'
         },
         /**
-         * Computed valie if examples are set.
-         */
-        hasExamples: {type: Boolean, value: false},
-        /**
          * Set to render a mobile friendly view.
          */
          narrow: {
@@ -153,10 +146,6 @@
           */
          mediaType: String
       };
-    }
-
-    _typeChanged() {
-      this.hasExamples = false;
     }
     /**
      * Computes `typeTitle` property

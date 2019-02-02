@@ -1,7 +1,7 @@
 {
   "name": "api-type-documentation",
   "description": "A documentation module for RAML types (resources) using AMF data model",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "license": "Apache-2.0",
   "main": "api-type-documentation.html",
   "keywords": [
@@ -14,7 +14,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^2.0.3",
-    "api-type-document": "advanced-rest-client/api-type-document#^2.0.0",
+    "api-type-document": "advanced-rest-client/api-type-document#^2.1.0",
     "marked-element": "PolymerElements/marked-element#^2.4.0",
     "markdown-styles": "advanced-rest-client/markdown-styles#^2.0.2",
     "api-annotation-document": "advanced-rest-client/api-annotation-document#^2.0.0",

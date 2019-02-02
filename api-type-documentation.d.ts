@@ -20,7 +20,6 @@
 /// <reference path="../iron-flex-layout/iron-flex-layout.d.ts" />
 /// <reference path="../api-type-document/api-type-document.d.ts" />
 /// <reference path="../api-annotation-document/api-annotation-document.d.ts" />
-/// <reference path="../api-resource-example-document/api-resource-example-document.d.ts" />
 /// <reference path="../api-schema-document/api-schema-document.d.ts" />
 /// <reference path="../amf-helper-mixin/amf-helper-mixin.d.ts" />
 
@@ -95,11 +94,6 @@ declare namespace ApiElements {
     readonly isSchema: boolean|null|undefined;
 
     /**
-     * Computed valie if examples are set.
-     */
-    hasExamples: boolean|null|undefined;
-
-    /**
      * Set to render a mobile friendly view.
      */
     narrow: boolean|null|undefined;
@@ -115,7 +109,6 @@ declare namespace ApiElements {
      * @param shape AMF model for data type
      */
     _computeDescription(shape: object|null): String|null|undefined;
-    _typeChanged(): void;
 
     /**
      * Computes `typeTitle` property
