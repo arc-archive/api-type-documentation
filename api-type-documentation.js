@@ -1,14 +1,14 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element.js';
-import {html} from '@polymer/polymer/lib/utils/html-tag.js';
-import {AmfHelperMixin} from '@api-components/amf-helper-mixin/amf-helper-mixin.js';
-import '@polymer/polymer/lib/elements/dom-if.js';
-import '@api-components/raml-aware/raml-aware.js';
-import '@advanced-rest-client/markdown-styles/markdown-styles.js';
-import '@polymer/marked-element/marked-element.js';
-import '@polymer/iron-flex-layout/iron-flex-layout.js';
-import '@api-components/api-type-document/api-type-document.js';
-import '@api-components/api-annotation-document/api-annotation-document.js';
-import '@api-components/api-schema-document/api-schema-document.js';
+import {PolymerElement} from '../../@polymer/polymer/polymer-element.js';
+import {html} from '../../@polymer/polymer/lib/utils/html-tag.js';
+import {AmfHelperMixin} from '../../@api-components/amf-helper-mixin/amf-helper-mixin.js';
+import '../../@polymer/polymer/lib/elements/dom-if.js';
+import '../../@api-components/raml-aware/raml-aware.js';
+import '../../@advanced-rest-client/markdown-styles/markdown-styles.js';
+import '../../@polymer/marked-element/marked-element.js';
+import '../../@polymer/iron-flex-layout/iron-flex-layout.js';
+import '../../@api-components/api-type-document/api-type-document.js';
+import '../../@api-components/api-annotation-document/api-annotation-document.js';
+import '../../@api-components/api-schema-document/api-schema-document.js';
 /**
  * `api-type-documentation`
  *
