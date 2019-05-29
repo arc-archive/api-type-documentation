@@ -89,6 +89,11 @@
 ]
 }
 ],
+"raml-http:contentType": [
+{
+"@value": "application/json"
+}
+],
 "raml-http:scheme": [
 {
 "@value": "https"
@@ -131,6 +136,11 @@
 "raml-http:guiSummary": [
 {
 "@value": "Product Types"
+}
+],
+"raml-http:contentType": [
+{
+"@value": "application/json"
 }
 ],
 "hydra:expects": [
@@ -762,7 +772,7 @@
 ],
 "hydra:statusCode": [
 {
-"@value": "200"
+"@value": "default"
 }
 ],
 "raml-http:payload": [
@@ -967,6 +977,11 @@
 "raml-http:guiSummary": [
 {
 "@value": "Price Estimates"
+}
+],
+"raml-http:contentType": [
+{
+"@value": "application/json"
 }
 ],
 "hydra:expects": [
@@ -2032,7 +2047,7 @@
 ],
 "hydra:statusCode": [
 {
-"@value": "200"
+"@value": "default"
 }
 ],
 "raml-http:payload": [
@@ -2237,6 +2252,11 @@
 "raml-http:guiSummary": [
 {
 "@value": "Time Estimates"
+}
+],
+"raml-http:contentType": [
+{
+"@value": "application/json"
 }
 ],
 "hydra:expects": [
@@ -3261,7 +3281,7 @@
 ],
 "hydra:statusCode": [
 {
-"@value": "200"
+"@value": "default"
 }
 ],
 "raml-http:payload": [
@@ -3468,6 +3488,11 @@
 "@value": "User Profile"
 }
 ],
+"raml-http:contentType": [
+{
+"@value": "application/json"
+}
+],
 "hydra:returns": [
 {
 "@id": "#105",
@@ -3578,7 +3603,7 @@
 ],
 "hydra:statusCode": [
 {
-"@value": "200"
+"@value": "default"
 }
 ],
 "raml-http:payload": [
@@ -3783,6 +3808,11 @@
 "raml-http:guiSummary": [
 {
 "@value": "User Activity"
+}
+],
+"raml-http:contentType": [
+{
+"@value": "application/json"
 }
 ],
 "hydra:expects": [
@@ -4338,7 +4368,7 @@
 ],
 "hydra:statusCode": [
 {
-"@value": "200"
+"@value": "default"
 }
 ],
 "raml-http:payload": [
@@ -4561,12 +4591,12 @@
 {
 "sourcemaps:element": [
 {
-"@value": "schema-org:name"
+"@value": "schema-org:description"
 }
 ],
 "sourcemaps:value": [
 {
-"@value": "[(4,4)-(4,13)]"
+"@value": "[(5,4)-(5,19)]"
 }
 ]
 },
@@ -4585,12 +4615,24 @@
 {
 "sourcemaps:element": [
 {
-"@value": "schema-org:description"
+"@value": "schema-org:name"
 }
 ],
 "sourcemaps:value": [
 {
-"@value": "[(5,4)-(5,19)]"
+"@value": "[(4,4)-(4,13)]"
+}
+]
+},
+{
+"sourcemaps:element": [
+{
+"@value": "raml-http:contentType"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(13,2)-(13,14)]"
 }
 ]
 },
