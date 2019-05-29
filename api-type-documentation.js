@@ -77,9 +77,6 @@ class ApiTypeDocumentation extends AmfHelperMixin(PolymerElement) {
     </template>`;
   }
 
-  static get is() {
-    return 'api-type-documentation';
-  }
   static get properties() {
     return {
       /**
@@ -206,4 +203,4 @@ class ApiTypeDocumentation extends AmfHelperMixin(PolymerElement) {
     return this._hasType(shape, this.ns.w3.shacl.name + 'SchemaShape');
   }
 }
-window.customElements.define(ApiTypeDocumentation.is, ApiTypeDocumentation);
+window.customElements.define('api-type-documentation', ApiTypeDocumentation);
