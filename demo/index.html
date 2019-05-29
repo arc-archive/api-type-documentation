@@ -98,7 +98,7 @@
           <api-navigation aware="model" types-opened></api-navigation>
           <template is="dom-if" if="[[hasType]]">
             <div class="card">
-              <api-type-documentation aware="model" type="[[type]]"></api-type-documentation>
+              <api-type-documentation aware="model" type="[[type]]" media-types='["application/json", "application/xml"]'></api-type-documentation>
             </div>
           </template>
           <template is="dom-if" if="[[!hasType]]">
