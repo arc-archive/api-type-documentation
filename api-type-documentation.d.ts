@@ -12,12 +12,6 @@
 // tslint:disable:variable-name Describing an API that's defined elsewhere.
 // tslint:disable:no-any describes the API as best we are able today
 
-import {PolymerElement} from '@polymer/polymer/polymer-element.js';
-
-import {html} from '@polymer/polymer/lib/utils/html-tag.js';
-
-import {AmfHelperMixin} from '@api-components/amf-helper-mixin/amf-helper-mixin.js';
-
 declare namespace ApiElements {
 
   /**
@@ -41,6 +35,11 @@ declare namespace ApiElements {
     Object) {
 
     /**
+     * `raml-aware` scope property to use.
+     */
+    aware: string|null|undefined;
+
+    /**
      * Generated AMF json/ld model form the API spec.
      * The element assumes the object of the first array item to be a
      * type of `"http://raml.org/vocabularies/document#Document`
@@ -49,11 +48,6 @@ declare namespace ApiElements {
      * It is only usefult for the element to resolve references.
      */
     amfModel: object|any[]|null;
-
-    /**
-     * `raml-aware` scope property to use.
-     */
-    aware: string|null|undefined;
 
     /**
      * A type definition to render.
@@ -99,11 +93,19 @@ declare namespace ApiElements {
     mediaType: string|null|undefined;
 
     /**
-     * Computes `description` property
+     * A list of supported media types for the type.
+     * This is used by `api-resource-example-document` to compute examples.
+     * In practive it should be value of raml's `mediaType`.
      *
-     * @param shape AMF model for data type
+     * Each item in the array is just a name of thr media type.
+     *
+     * Example:
+     *
+     * ```json
+     * ["application/json", "application/xml"]
+     * ```
      */
-    _computeDescription(shape: object|null): String|null|undefined;
+    mediaTypes: Array<String|null>|null;
 
     /**
      * Computes `typeTitle` property
@@ -111,6 +113,13 @@ declare namespace ApiElements {
      * @param shape AMF model for data type
      */
     _computeTitle(shape: object|null): String|null|undefined;
+
+    /**
+     * Computes `description` property
+     *
+     * @param shape AMF model for data type
+     */
+    _computeDescription(shape: object|null): String|null|undefined;
 
     /**
      * Computes value for `isSchema` property.
@@ -127,3 +136,5 @@ declare global {
     "api-type-documentation": ApiElements.ApiTypeDocumentation;
   }
 }
+
+export {};

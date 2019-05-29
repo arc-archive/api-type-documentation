@@ -65,12 +65,16 @@ class ApiTypeDocumentation extends AmfHelperMixin(PolymerElement) {
       </marked-element>
     </template>
     <template is="dom-if" if="[[!isSchema]]">
-      <api-type-document amf-model="[[amfModel]]" type="[[type]]" narrow="[[narrow]]" media-type="[[mediaType]]"></api-type-document>
+      <api-type-document
+        amf-model="[[amfModel]]"
+        type="[[type]]"
+        narrow="[[narrow]]"
+        media-type="[[mediaType]]"
+        media-types="[[mediaTypes]]"></api-type-document>
     </template>
     <template is="dom-if" if="[[isSchema]]">
       <api-schema-document shape="[[type]]" amf-model="[[amfModel]]"></api-schema-document>
-    </template>
-`;
+    </template>`;
   }
 
   static get is() {
@@ -145,7 +149,23 @@ class ApiTypeDocumentation extends AmfHelperMixin(PolymerElement) {
        /**
         * A media type to use to generate examples.
         */
-       mediaType: String
+       mediaType: String,
+       /**
+        * A list of supported media types for the type.
+        * This is used by `api-resource-example-document` to compute examples.
+        * In practive it should be value of raml's `mediaType`.
+        *
+        * Each item in the array is just a name of thr media type.
+        *
+        * Example:
+        *
+        * ```json
+        * ["application/json", "application/xml"]
+        * ```
+        *
+        * @type {Array<String>}
+        */
+        mediaTypes: Array
     };
   }
   /**
