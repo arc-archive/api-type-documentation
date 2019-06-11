@@ -1,0 +1,16 @@
+#%RAML 1.0 DataType
+displayName: Book
+type: object
+examples: 
+  Book: !include Book_Example.raml
+properties: 
+  id:
+    displayName: The ISBN number of book
+    type: string
+    required: true
+  name:
+    displayName: Book name
+    type: string
+  author:
+    displayName: description
+    type: !include AuthorDataType.raml

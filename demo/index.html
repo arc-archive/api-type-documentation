@@ -90,6 +90,7 @@
               <paper-item data-src="examples-api-compact.json">Examples api - compact model</paper-item>
               <paper-item data-src="uber.json">Uber (OAS)</paper-item>
               <paper-item data-src="uber-compact.json">Uber (OAS) - compact model</paper-item>
+              <paper-item data-src="book-api-compact.json">APIC-211 - compact model</paper-item>
             </paper-listbox>
           </paper-dropdown-menu>
           <div class="spacer"></div>
@@ -100,7 +101,7 @@
           <api-navigation aware="model" types-opened=""></api-navigation>
           <template is="dom-if" if="[[hasType]]">
             <div class="card">
-              <api-type-documentation aware="model" type="[[type]]"></api-type-documentation>
+              <api-type-documentation aware="model" type="[[type]]" media-types="[[mediaTypes]]"></api-type-documentation>
             </div>
           </template>
           <template is="dom-if" if="[[!hasType]]">
@@ -112,8 +113,8 @@
       </template>
     </dom-bind>
     <script type="module">
-    import {PolymerElement} from '@polymer/polymer/polymer-element.js';
-    import {AmfHelperMixin} from '@api-components/amf-helper-mixin/amf-helper-mixin.js';
+    import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+    import { AmfHelperMixin, ns } from '@api-components/amf-helper-mixin/amf-helper-mixin.js';
     (function(app) {
       app.hasType = false;
       app._load = function() {
@@ -127,6 +128,7 @@
         .then((response) => response.json())
         .then((data) => {
           app.amfModel = data;
+          app.setMediaTypes(data);
         });
       };
 
@@ -153,6 +155,26 @@
           return;
         }
         app.type = type;
+      };
+
+      app.setMediaTypes = function(model) {
+        if (model instanceof Array) {
+          model = model[0];
+        }
+        let webApi = app.$.helper._computeWebApi(model);
+        if (!webApi) {
+          return;
+        }
+        if (webApi instanceof Array) {
+          webApi = webApi[0];
+        }
+        const key = app.$.helper._getAmfKey(ns.raml.vocabularies.http + 'accepts');
+        const value = app.$.helper._ensureArray(webApi[key]);
+        if (value) {
+          app.mediaTypes = value.map((item) => item['@value']);
+        } else {
+          app.mediaTypes = undefined;
+        }
       };
       window.addEventListener('WebComponentsReady', () => app._load());
       window.addEventListener('api-navigation-selection-changed', app._navChanged);
