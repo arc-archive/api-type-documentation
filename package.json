@@ -31,7 +31,7 @@
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "sinon": "^7.3.2",
-    "wct-mocha": "^1.0.0",
+    "wct-mocha": "^1.0.1",
     "web-animations-js": "^2.3.1"
   },
   "scripts": {
@@ -49,8 +49,8 @@
     "The Advanced REST client authors <arc@mulesoft.com>"
   ],
   "dependencies": {
-    "@advanced-rest-client/markdown-styles": "^3.0.0-preview.2",
-    "@api-components/amf-helper-mixin": "^3.0.0-preview.1",
+    "@advanced-rest-client/markdown-styles": "^3.0.0",
+    "@api-components/amf-helper-mixin": "^3.0.0",
     "@api-components/api-annotation-document": "^3.0.0-preview.2",
     "@api-components/api-resource-example-document": "^3.0.0-preview.5",
     "@api-components/api-schema-document": "^3.0.0-preview.3",
