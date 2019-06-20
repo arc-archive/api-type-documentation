@@ -1,0 +1,12 @@
+#%RAML 1.0 DataType
+displayName: Author
+example: !include Author_Example.raml 
+type: object
+properties:
+  name:
+    displayName: Author name
+    type: string
+  dateOfbirth:
+    displayName: Date of birth
+    type: date-only
+    required: false

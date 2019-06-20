@@ -5,23 +5,16 @@
  *   https://github.com/Polymer/tools/tree/master/packages/gen-typescript-declarations
  *
  * To modify these typings, edit the source file(s):
- *   api-type-documentation.html
+ *   api-type-documentation.js
  */
 
 
 // tslint:disable:variable-name Describing an API that's defined elsewhere.
 // tslint:disable:no-any describes the API as best we are able today
 
-/// <reference path="../polymer/types/polymer-element.d.ts" />
-/// <reference path="../polymer/types/lib/elements/dom-if.d.ts" />
-/// <reference path="../raml-aware/raml-aware.d.ts" />
-/// <reference path="../markdown-styles/markdown-styles.d.ts" />
-/// <reference path="../marked-element/marked-element.d.ts" />
-/// <reference path="../iron-flex-layout/iron-flex-layout.d.ts" />
-/// <reference path="../api-type-document/api-type-document.d.ts" />
-/// <reference path="../api-annotation-document/api-annotation-document.d.ts" />
-/// <reference path="../api-schema-document/api-schema-document.d.ts" />
-/// <reference path="../amf-helper-mixin/amf-helper-mixin.d.ts" />
+import {LitElement, html, css} from 'lit-element';
+
+import {AmfHelperMixin} from '@api-components/amf-helper-mixin/amf-helper-mixin.js';
 
 declare namespace ApiElements {
 
@@ -42,23 +35,8 @@ declare namespace ApiElements {
    * `--api-type-documentation-title-narrow` | Mixin applied to the title in narrow layout | `{}`
    */
   class ApiTypeDocumentation extends
-    ApiElements.AmfHelperMixin(
+    AmfHelperMixin(
     Object) {
-
-    /**
-     * Generated AMF json/ld model form the API spec.
-     * The element assumes the object of the first array item to be a
-     * type of `"http://raml.org/vocabularies/document#Document`
-     * on AMF vocabulary.
-     *
-     * It is only usefult for the element to resolve references.
-     */
-    amfModel: object|any[]|null;
-
-    /**
-     * `raml-aware` scope property to use.
-     */
-    aware: string|null|undefined;
 
     /**
      * A type definition to render.
@@ -72,26 +50,31 @@ declare namespace ApiElements {
     type: object|any[]|null;
 
     /**
+     * `raml-aware` scope property to use.
+     */
+    aware: string|null|undefined;
+
+    /**
      * Computed value, title of the type.
      */
-    readonly typeTitle: string|null|undefined;
+    typeTitle: string|null|undefined;
 
     /**
      * Computed value of method description from `method` property.
      */
-    readonly description: string|null|undefined;
+    description: string|null|undefined;
 
     /**
      * Computed value from current `method`. True if the model contains
      * custom properties (annotations in RAML).
      */
-    readonly hasCustomProperties: boolean|null|undefined;
+    hasCustomProperties: boolean|null|undefined;
 
     /**
      * Computed value, true when passed model represents a schema
      * (like XML)
      */
-    readonly isSchema: boolean|null|undefined;
+    isSchema: boolean|null|undefined;
 
     /**
      * Set to render a mobile friendly view.
@@ -104,11 +87,29 @@ declare namespace ApiElements {
     mediaType: string|null|undefined;
 
     /**
+     * A list of supported media types for the type.
+     * This is used by `api-resource-example-document` to compute examples.
+     * In practive it should be value of raml's `mediaType`.
+     *
+     * Each item in the array is just a name of thr media type.
+     *
+     * Example:
+     *
+     * ```json
+     * ["application/json", "application/xml"]
+     * ```
+     */
+    mediaTypes: Array<String|null>|null;
+
+    /**
      * Computes `description` property
      *
      * @param shape AMF model for data type
      */
     _computeDescription(shape: object|null): String|null|undefined;
+    render(): any;
+    _apiChangedHandler(e: any): void;
+    _typeChanged(type: any): void;
 
     /**
      * Computes `typeTitle` property
@@ -122,10 +123,13 @@ declare namespace ApiElements {
      *
      * @param shape AMF `supportedOperation` model
      */
-    _computeIsSchema(shape: object|null): Boolean|null;
+    _computeIsSchema(shape: object|null): Boolean|null|undefined;
   }
 }
 
-interface HTMLElementTagNameMap {
-  "api-type-documentation": ApiElements.ApiTypeDocumentation;
+declare global {
+
+  interface HTMLElementTagNameMap {
+    "api-type-documentation": ApiElements.ApiTypeDocumentation;
+  }
 }

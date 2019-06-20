@@ -1,0 +1,22 @@
+#%RAML 1.0
+baseUri: https://api.domain.com/
+title: Sandbox API
+version: 1.0.0
+description: This is Test API to be used for various tests or try-outs on API. Please feel free to add/modify as you like.
+types:
+  Book: !include BookDataType.raml
+  Autor: !include AuthorDataType.raml
+
+mediaType: [application/json]
+
+/books:
+  displayName: Retrieve books
+  get:
+    displayName: Retrieve a list of books
+    responses:
+      200:
+        description: Get List of books
+        body:
+          application/json:
+            type: array
+            items: Book
