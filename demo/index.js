@@ -58,7 +58,6 @@ class ApiDemo extends ApiDemoPageBase {
     const { selected, type } = e.detail;
     this.hasType = false;
     this.mediaType = undefined;
-    this.mediaTypes = undefined;
 
     if (type === 'type') {
       this.setTypeData(selected);
@@ -130,3 +129,4 @@ class ApiDemo extends ApiDemoPageBase {
 }
 const instance = new ApiDemo();
 instance.render();
+window._demo = instance;
