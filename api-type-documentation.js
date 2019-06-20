@@ -1,80 +1,69 @@
-import {PolymerElement} from '../../@polymer/polymer/polymer-element.js';
-import {html} from '../../@polymer/polymer/lib/utils/html-tag.js';
-import {AmfHelperMixin} from '../../@api-components/amf-helper-mixin/amf-helper-mixin.js';
-import '../../@polymer/polymer/lib/elements/dom-if.js';
-import '../../@api-components/raml-aware/raml-aware.js';
-import '../../@advanced-rest-client/markdown-styles/markdown-styles.js';
-import '../../@polymer/marked-element/marked-element.js';
-import '../../@polymer/iron-flex-layout/iron-flex-layout.js';
-import '../../@api-components/api-type-document/api-type-document.js';
-import '../../@api-components/api-annotation-document/api-annotation-document.js';
-import '../../@api-components/api-schema-document/api-schema-document.js';
+import { LitElement, html, css } from 'lit-element';
+import { AmfHelperMixin } from '@api-components/amf-helper-mixin/amf-helper-mixin.js';
+import '@api-components/raml-aware/raml-aware.js';
+import markdownStyles from '@advanced-rest-client/markdown-styles/markdown-styles.js';
+import '@advanced-rest-client/arc-marked/arc-marked.js';
+import '@api-components/api-type-document/api-type-document.js';
+import '@api-components/api-annotation-document/api-annotation-document.js';
+import '@api-components/api-schema-document/api-schema-document.js';
 /**
  * `api-type-documentation`
  *
  * A documentation module for RAML types (resources) using AMF data model.
  *
- * ## Styling
- *
- * `<api-type-documentation>` provides the following custom properties and mixins for styling:
- *
- * Custom property | Description | Default
- * ----------------|-------------|----------
- * `--api-type-documentation` | Mixin applied to this elment | `{}`
- * `--arc-font-headline` | Theme mixin, applied to the title | `{}`
- * `--api-type-documentation-title` | Mixin applied to the title | `{}`
- * `--api-type-documentation-title-narrow` | Mixin applied to the title in narrow layout | `{}`
- *
  * @customElement
- * @polymer
  * @demo demo/index.html
  * @memberof ApiElements
- * @appliesMixin ApiElements.AmfHelperMixin
+ * @appliesMixin AmfHelperMixin
  */
-class ApiTypeDocumentation extends AmfHelperMixin(PolymerElement) {
-  static get template() {
+class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
+  static get styles() {
+    return [
+      markdownStyles,
+      css`:host {
+        display: block;
+      }
+
+      h1 {
+        font-size: var(--arc-font-headline-font-size);
+        font-weight: var(--arc-font-headline-font-weight);
+        letter-spacing: var(--arc-font-headline-letter-spacing);
+        line-height: var(--arc-font-headline-line-height);
+      }
+
+      :host([narrow]) h1 {
+        font-size: var(--arc-font-headline-narrow-font-size);
+      }
+
+      arc-marked {
+        background-color: transparent;
+        padding: 0;
+      }`
+    ];
+  }
+
+  render() {
+    const { aware, typeTitle, hasCustomProperties, amf, type, isSchema, narrow, mediaType, mediaTypes } = this;
     return html`
-    <style include="markdown-styles"></style>
-    <style>
-    :host {
-      display: block;
-      @apply --api-type-documentation;
-    }
+    ${aware ?
+      html`<raml-aware @api-changed="${this._apiChangedHandler}" scope="${aware}"></raml-aware>` : undefined}
 
-    h1 {
-      @apply --arc-font-headline;
-      @apply --api-type-documentation-title;
-    }
+    ${typeTitle ? html`<h1 class="title">${typeTitle}</h1>` : undefined}
+    ${hasCustomProperties ?
+      html`<api-annotation-document .amf="${amf}" .shape="${type}"></api-annotation-document>` : undefined}
 
-    :host([narrow]) h1 {
-      @apply --api-type-documentation-title-narrow;
-    }
-    </style>
-    <template is="dom-if" if="[[aware]]">
-      <raml-aware raml="{{amfModel}}" scope="[[aware]]"></raml-aware>
-    </template>
-    <template is="dom-if" if="[[typeTitle]]">
-      <h1 class="title">[[typeTitle]]</h1>
-    </template>
-    <template is="dom-if" if="[[hasCustomProperties]]">
-      <api-annotation-document amf-model="[[amfModel]]" shape="[[type]]"></api-annotation-document>
-    </template>
-    <template is="dom-if" if="[[description]]">
-      <marked-element markdown="[[description]]">
-        <div slot="markdown-html" class="markdown-body"></div>
-      </marked-element>
-    </template>
-    <template is="dom-if" if="[[!isSchema]]">
-      <api-type-document
-        amf-model="[[amfModel]]"
-        type="[[type]]"
-        narrow="[[narrow]]"
-        media-type="[[mediaType]]"
-        media-types="[[mediaTypes]]"></api-type-document>
-    </template>
-    <template is="dom-if" if="[[isSchema]]">
-      <api-schema-document shape="[[type]]" amf-model="[[amfModel]]"></api-schema-document>
-    </template>`;
+    ${this.description ? html`<arc-marked .markdown="${this.description}">
+      <div slot="markdown-html" class="markdown-html" part="markdown-html"></div>
+    </arc-marked>` : undefined}
+
+    ${isSchema ?
+      html`<api-schema-document .shape="${type}" .amf="${amf}"></api-schema-document>` :
+      html`<api-type-document
+        .amf="${amf}"
+        .type="${type}"
+        ?narrow="${narrow}"
+        .mediaType="${mediaType}"
+        .mediaTypes="${mediaTypes}"></api-type-document>`}`;
   }
 
   static get properties() {
@@ -82,18 +71,7 @@ class ApiTypeDocumentation extends AmfHelperMixin(PolymerElement) {
       /**
        * `raml-aware` scope property to use.
        */
-      aware: String,
-      /**
-       * Generated AMF json/ld model form the API spec.
-       * The element assumes the object of the first array item to be a
-       * type of `"http://raml.org/vocabularies/document#Document`
-       * on AMF vocabulary.
-       *
-       * It is only usefult for the element to resolve references.
-       *
-       * @type {Object|Array}
-       */
-      amfModel: Object,
+      aware: { type: String },
       /**
        * A type definition to render.
        * This should be a one of the following AMF types:
@@ -104,45 +82,29 @@ class ApiTypeDocumentation extends AmfHelperMixin(PolymerElement) {
        * - `http://raml.org/vocabularies/shapes#ScalarShape` (single property)
        * @type {Object|Array}
        */
-      type: Object,
+      type: { type: Object },
       /**
        * Computed value, title of the type.
        */
-      typeTitle: {
-        type: String,
-        computed: '_computeTitle(type)'
-      },
+      typeTitle: { type: String },
       /**
        * Computed value of method description from `method` property.
        */
-      description: {
-        type: String,
-        computed: '_computeDescription(type)'
-      },
+      description: { type: String },
       /**
        * Computed value from current `method`. True if the model contains
        * custom properties (annotations in RAML).
        */
-      hasCustomProperties: {
-        type: Boolean,
-        computed: '_computeHasCustomProperties(type)'
-      },
+      hasCustomProperties: { type: Boolean },
       /**
        * Computed value, true when passed model represents a schema
        * (like XML)
        */
-      isSchema: {
-        type: Boolean,
-        value: false,
-        computed: '_computeIsSchema(type)'
-      },
+      isSchema: { type: Boolean },
       /**
        * Set to render a mobile friendly view.
        */
-       narrow: {
-         type: Boolean,
-         reflectToAttribute: true
-       },
+       narrow: { type: Boolean, reflect: true },
        /**
         * A media type to use to generate examples.
         */
@@ -164,6 +126,34 @@ class ApiTypeDocumentation extends AmfHelperMixin(PolymerElement) {
         */
         mediaTypes: Array
     };
+  }
+
+  get type() {
+    return this._type;
+  }
+
+  set type(value) {
+    const old = this._type;
+    if (old === value) {
+      return;
+    }
+    this._type = value;
+    this.requestUpdate('type', old);
+    this._typeChanged(value);
+  }
+
+  _apiChangedHandler(e) {
+    const { value } = e.detail;
+    setTimeout(() => {
+      this.amf = value;
+    });
+  }
+
+  _typeChanged(type) {
+    this.isSchema = this._computeIsSchema(type);
+    this.hasCustomProperties = this._computeHasCustomProperties(type);
+    this.description = this._computeDescription(type);
+    this.typeTitle = this._computeTitle(type);
   }
   /**
    * Computes `typeTitle` property
@@ -194,7 +184,7 @@ class ApiTypeDocumentation extends AmfHelperMixin(PolymerElement) {
    * Computes value for `isSchema` property.
    *
    * @param {Object} shape AMF `supportedOperation` model
-   * @return {Boolean}
+   * @return {Boolean | undefined}
    */
   _computeIsSchema(shape) {
     if (!shape) {

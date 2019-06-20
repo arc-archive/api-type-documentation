@@ -12,6 +12,10 @@
 // tslint:disable:variable-name Describing an API that's defined elsewhere.
 // tslint:disable:no-any describes the API as best we are able today
 
+import {LitElement, html, css} from 'lit-element';
+
+import {AmfHelperMixin} from '@api-components/amf-helper-mixin/amf-helper-mixin.js';
+
 declare namespace ApiElements {
 
   /**
@@ -31,23 +35,8 @@ declare namespace ApiElements {
    * `--api-type-documentation-title-narrow` | Mixin applied to the title in narrow layout | `{}`
    */
   class ApiTypeDocumentation extends
-    ApiElements.AmfHelperMixin(
+    AmfHelperMixin(
     Object) {
-
-    /**
-     * `raml-aware` scope property to use.
-     */
-    aware: string|null|undefined;
-
-    /**
-     * Generated AMF json/ld model form the API spec.
-     * The element assumes the object of the first array item to be a
-     * type of `"http://raml.org/vocabularies/document#Document`
-     * on AMF vocabulary.
-     *
-     * It is only usefult for the element to resolve references.
-     */
-    amfModel: object|any[]|null;
 
     /**
      * A type definition to render.
@@ -61,26 +50,31 @@ declare namespace ApiElements {
     type: object|any[]|null;
 
     /**
+     * `raml-aware` scope property to use.
+     */
+    aware: string|null|undefined;
+
+    /**
      * Computed value, title of the type.
      */
-    readonly typeTitle: string|null|undefined;
+    typeTitle: string|null|undefined;
 
     /**
      * Computed value of method description from `method` property.
      */
-    readonly description: string|null|undefined;
+    description: string|null|undefined;
 
     /**
      * Computed value from current `method`. True if the model contains
      * custom properties (annotations in RAML).
      */
-    readonly hasCustomProperties: boolean|null|undefined;
+    hasCustomProperties: boolean|null|undefined;
 
     /**
      * Computed value, true when passed model represents a schema
      * (like XML)
      */
-    readonly isSchema: boolean|null|undefined;
+    isSchema: boolean|null|undefined;
 
     /**
      * Set to render a mobile friendly view.
@@ -108,6 +102,16 @@ declare namespace ApiElements {
     mediaTypes: Array<String|null>|null;
 
     /**
+     * Computes `description` property
+     *
+     * @param shape AMF model for data type
+     */
+    _computeDescription(shape: object|null): String|null|undefined;
+    render(): any;
+    _apiChangedHandler(e: any): void;
+    _typeChanged(type: any): void;
+
+    /**
      * Computes `typeTitle` property
      *
      * @param shape AMF model for data type
@@ -115,18 +119,11 @@ declare namespace ApiElements {
     _computeTitle(shape: object|null): String|null|undefined;
 
     /**
-     * Computes `description` property
-     *
-     * @param shape AMF model for data type
-     */
-    _computeDescription(shape: object|null): String|null|undefined;
-
-    /**
      * Computes value for `isSchema` property.
      *
      * @param shape AMF `supportedOperation` model
      */
-    _computeIsSchema(shape: object|null): Boolean|null;
+    _computeIsSchema(shape: object|null): Boolean|null|undefined;
   }
 }
 
@@ -136,5 +133,3 @@ declare global {
     "api-type-documentation": ApiElements.ApiTypeDocumentation;
   }
 }
-
-export {};
