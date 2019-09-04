@@ -24,14 +24,14 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
         display: block;
       }
 
-      h1 {
+      .title {
         font-size: var(--arc-font-headline-font-size);
         font-weight: var(--arc-font-headline-font-weight);
         letter-spacing: var(--arc-font-headline-letter-spacing);
         line-height: var(--arc-font-headline-line-height);
       }
 
-      :host([narrow]) h1 {
+      :host([narrow]) .title {
         font-size: var(--arc-font-headline-narrow-font-size);
       }
 
@@ -54,13 +54,14 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
       mediaType,
       mediaTypes,
       compatibility,
-      graph
+      graph,
+      headerLevel
     } = this;
     return html `
     ${aware ?
       html`<raml-aware @api-changed="${this._apiChangedHandler}" scope="${aware}"></raml-aware>` : undefined}
 
-    ${typeTitle ? html`<h1 class="title">${typeTitle}</h1>` : undefined}
+    ${typeTitle ? html`<div class="title" role="heading" aria-level="${headerLevel}">${typeTitle}</div>` : ''}
     ${hasCustomProperties ?
       html`<api-annotation-document .amf="${amf}" .shape="${type}"></api-annotation-document>` : undefined}
 
@@ -165,7 +166,14 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
        * When enabled it renders external types as links and dispatches
        * `api-navigation-selection-changed` when clicked.
        */
-      graph: { type: Boolean }
+      graph: { type: Boolean },
+      /**
+       * Type of the header in the documentation section.
+       * Should be in range of 1 to 6.
+       *
+       * @default 2
+       */
+      headerLevel: { type: Number }
     };
   }
 
@@ -181,6 +189,11 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
     this._type = value;
     this.requestUpdate('type', old);
     this._typeChanged(value);
+  }
+
+  constructor() {
+    super();
+    this.headerLevel = 2;
   }
 
   _apiChangedHandler(e) {
