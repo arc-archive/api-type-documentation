@@ -1,10 +1,15 @@
-import {ns} from '@api-components/amf-helper-mixin/amf-helper-mixin.js';
+import { LitElement } from 'lit-element';
+import { AmfHelperMixin } from '@api-components/amf-helper-mixin/amf-helper-mixin.js';
+
+class TestHelperElement extends AmfHelperMixin(LitElement) {}
+window.customElements.define('demo-element', TestHelperElement);
+
 export const AmfLoader = {};
+
 AmfLoader.load = async function(index, compact) {
   index = index || 0;
   const file = '/demo-api' + (compact ? '-compact' : '') + '.json';
   const url = location.protocol + '//' + location.host + '/base/demo/' + file;
-  /* global Promise */
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.addEventListener('load', (e) => {
@@ -25,9 +30,10 @@ AmfLoader.load = async function(index, compact) {
       if (data instanceof Array) {
         data = data[0];
       }
-      const decKey = compact ? 'doc:declares' :
-        ns.raml.vocabularies.document + 'declares';
-      let declares = data[decKey];
+
+      const helper = new TestHelperElement();
+      helper.amf = data;
+      let declares = helper._computeDeclares(data);
       /* istanbul ignore next */
       if (!(declares instanceof Array)) {
         declares = [declares];

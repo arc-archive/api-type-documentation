@@ -14,6 +14,9 @@ module.exports = (config) => {
         {
           pattern: config.grep ? config.grep : 'test/**/*.test.js',
           type: 'module'
+        },
+        {
+          pattern: require.resolve('axe-core/axe.min.js')
         }
       ],
 
@@ -21,7 +24,18 @@ module.exports = (config) => {
       esm: {
         // if you are using 'bare module imports' you will need this option
         nodeResolve: true
-      }
+      },
+
+      coverageIstanbulReporter: {
+        thresholds: {
+          global: {
+            statements: 80,
+            branches: 80,
+            functions: 90,
+            lines: 80
+          }
+        }
+      },
     })
   );
   return config;
