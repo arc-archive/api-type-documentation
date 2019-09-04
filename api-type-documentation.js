@@ -20,7 +20,7 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
   static get styles() {
     return [
       markdownStyles,
-      css`:host {
+      css `:host {
         display: block;
       }
 
@@ -43,8 +43,20 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
   }
 
   render() {
-    const { aware, typeTitle, hasCustomProperties, amf, type, isSchema, narrow, mediaType, mediaTypes } = this;
-    return html`
+    const {
+      aware,
+      typeTitle,
+      hasCustomProperties,
+      amf,
+      type,
+      isSchema,
+      narrow,
+      mediaType,
+      mediaTypes,
+      compatibility,
+      graph
+    } = this;
+    return html `
     ${aware ?
       html`<raml-aware @api-changed="${this._apiChangedHandler}" scope="${aware}"></raml-aware>` : undefined}
 
@@ -57,13 +69,18 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
     </arc-marked>` : undefined}
 
     ${isSchema ?
-      html`<api-schema-document .shape="${type}" .amf="${amf}"></api-schema-document>` :
+      html`<api-schema-document
+        .shape="${type}"
+        .amf="${amf}"
+        ?compatibility="${compatibility}"></api-schema-document>` :
       html`<api-type-document
         .amf="${amf}"
         .type="${type}"
         ?narrow="${narrow}"
         .mediaType="${mediaType}"
-        .mediaTypes="${mediaTypes}"></api-type-document>`}`;
+        .mediaTypes="${mediaTypes}"
+        ?graph="${graph}"
+        ?compatibility="${compatibility}"></api-type-document>`}`;
   }
 
   static get properties() {
@@ -71,7 +88,9 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
       /**
        * `raml-aware` scope property to use.
        */
-      aware: { type: String },
+      aware: {
+        type: String
+      },
       /**
        * A type definition to render.
        * This should be a one of the following AMF types:
@@ -82,49 +101,71 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
        * - `http://raml.org/vocabularies/shapes#ScalarShape` (single property)
        * @type {Object|Array}
        */
-      type: { type: Object },
+      type: {
+        type: Object
+      },
       /**
        * Computed value, title of the type.
        */
-      typeTitle: { type: String },
+      typeTitle: {
+        type: String
+      },
       /**
        * Computed value of method description from `method` property.
        */
-      description: { type: String },
+      description: {
+        type: String
+      },
       /**
        * Computed value from current `method`. True if the model contains
        * custom properties (annotations in RAML).
        */
-      hasCustomProperties: { type: Boolean },
+      hasCustomProperties: {
+        type: Boolean
+      },
       /**
        * Computed value, true when passed model represents a schema
        * (like XML)
        */
-      isSchema: { type: Boolean },
+      isSchema: {
+        type: Boolean
+      },
       /**
        * Set to render a mobile friendly view.
        */
-       narrow: { type: Boolean, reflect: true },
-       /**
-        * A media type to use to generate examples.
-        */
-       mediaType: String,
-       /**
-        * A list of supported media types for the type.
-        * This is used by `api-resource-example-document` to compute examples.
-        * In practive it should be value of raml's `mediaType`.
-        *
-        * Each item in the array is just a name of thr media type.
-        *
-        * Example:
-        *
-        * ```json
-        * ["application/json", "application/xml"]
-        * ```
-        *
-        * @type {Array<String>}
-        */
-        mediaTypes: Array
+      narrow: {
+        type: Boolean,
+        reflect: true
+      },
+      /**
+       * A media type to use to generate examples.
+       */
+      mediaType: String,
+      /**
+       * A list of supported media types for the type.
+       * This is used by `api-resource-example-document` to compute examples.
+       * In practive it should be value of raml's `mediaType`.
+       *
+       * Each item in the array is just a name of thr media type.
+       *
+       * Example:
+       *
+       * ```json
+       * ["application/json", "application/xml"]
+       * ```
+       *
+       * @type {Array<String>}
+       */
+      mediaTypes: Array,
+      /**
+       * Enables compatibility with Anypoint components.
+       */
+      compatibility: { type: Boolean },
+      /**
+       * When enabled it renders external types as links and dispatches
+       * `api-navigation-selection-changed` when clicked.
+       */
+      graph: { type: Boolean }
     };
   }
 
@@ -143,7 +184,9 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
   }
 
   _apiChangedHandler(e) {
-    const { value } = e.detail;
+    const {
+      value
+    } = e.detail;
     setTimeout(() => {
       this.amf = value;
     });
