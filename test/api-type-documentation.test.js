@@ -83,7 +83,7 @@ describe('<api-type-documentation>', function() {
 
         it('Returns title for schema.org/title', () => {
           const shape = {};
-          const key = element._getAmfKey(element.ns.schema.schemaName);
+          const key = element._getAmfKey(element.ns.aml.vocabularies.core.name);
           shape[key] = {
             '@value': 'test-title'
           };
@@ -93,7 +93,7 @@ describe('<api-type-documentation>', function() {
 
         it('Returns title for shacl/name', () => {
           const shape = {};
-          const key = element._getAmfKey(element.ns.w3.shacl.name + 'name');
+          const key = element._getAmfKey(element.ns.w3.shacl.name);
           shape[key] = {
             '@value': 'test-title'
           };
@@ -103,11 +103,11 @@ describe('<api-type-documentation>', function() {
 
         it('Prefers schema.org/title over shacl/name', () => {
           const shape = {};
-          const shaclKey = element._getAmfKey(element.ns.w3.shacl.name + 'name');
+          const shaclKey = element._getAmfKey(element.ns.w3.shacl.name);
           shape[shaclKey] = {
             '@value': 'test-title-shacl'
           };
-          const schemaKey = element._getAmfKey(element.ns.schema.schemaName);
+          const schemaKey = element._getAmfKey(element.ns.aml.vocabularies.core.name);
           shape[schemaKey] = {
             '@value': 'test-title-schema'
           };
@@ -144,7 +144,7 @@ describe('<api-type-documentation>', function() {
         });
 
         it('Returns true when SchemaShape', () => {
-          const value = element._getAmfKey(element.ns.w3.shacl.name + 'SchemaShape');
+          const value = element._getAmfKey(element.ns.aml.vocabularies.shapes.SchemaShape);
           const result = element._computeIsSchema({
             '@type': [value]
           });

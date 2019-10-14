@@ -90,7 +90,7 @@ class ApiDemo extends ApiDemoPageBase {
     if (webApi instanceof Array) {
       webApi = webApi[0];
     }
-    const key = helper._getAmfKey(helper.ns.raml.vocabularies.http + 'accepts');
+    const key = helper._getAmfKey(helper.ns.aml.vocabularies.apiContract.accepts);
     const value = helper._ensureArray(webApi[key]);
     if (value) {
       this.mediaTypes = value.map((item) => item['@value']);

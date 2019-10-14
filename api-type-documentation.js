@@ -221,9 +221,9 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
     if (!shape) {
       return;
     }
-    let name = this._getValue(shape, this.ns.schema.schemaName);
+    let name = this._getValue(shape, this.ns.aml.vocabularies.core.name);
     if (!name) {
-      name = this._getValue(shape, this.ns.w3.shacl.name + 'name');
+      name = this._getValue(shape, this.ns.w3.shacl.name);
     }
     return name;
   }
@@ -234,7 +234,7 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
    * @return {String|undefined}
    */
   _computeDescription(shape) {
-    return shape && this._getValue(shape, this.ns.schema.desc);
+    return shape && this._getValue(shape, this.ns.aml.vocabularies.core.description);
   }
   /**
    * Computes value for `isSchema` property.
@@ -246,7 +246,7 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
     if (!shape) {
       return;
     }
-    return this._hasType(shape, this.ns.w3.shacl.name + 'SchemaShape');
+    return this._hasType(shape, this.ns.aml.vocabularies.shapes.SchemaShape);
   }
 }
 window.customElements.define('api-type-documentation', ApiTypeDocumentation);
