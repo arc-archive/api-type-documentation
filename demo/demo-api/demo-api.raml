@@ -152,6 +152,11 @@ types:
       XML type that has only xsd schema and example
     type: !include product.xsd
     example: !include product.xml
+  JsonSchema:
+    description: |
+      JSON type that has JSON schema and example
+    type: !include schemas/person.json
+    example: !include examples/person.json
 
 /test:
   post:

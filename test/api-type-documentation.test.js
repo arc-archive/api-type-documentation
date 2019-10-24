@@ -241,6 +241,13 @@ describe('<api-type-documentation>', function() {
           const node = element.shadowRoot.querySelector('api-schema-document');
           assert.ok(node);
         });
+
+        it('passes mediaType to the renderer', async () => {
+          element.mediaType = 'application/json';
+          await nextFrame();
+          const node = element.shadowRoot.querySelector('api-schema-document');
+          assert.equal(node.mediaType, 'application/json');
+        });
       });
     });
   });
