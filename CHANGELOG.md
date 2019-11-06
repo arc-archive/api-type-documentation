@@ -265,3 +265,17 @@
 
 
 
+## 4.0.1 (2019-10-24)
+
+
+### Bug Fixes
+
+* fixing XML schema rendering ([81d1787](https://github.com/advanced-rest-client/api-type-documentation/commit/81d1787e68585b019970829aec2435e7dcb22f43))
+
+
+### Features
+
+* adding `compatibility` and `graph` properties ([cf7d3a9](https://github.com/advanced-rest-client/api-type-documentation/commit/cf7d3a9044352f23bb05154b0b665e08df9babc3))
+
+
+

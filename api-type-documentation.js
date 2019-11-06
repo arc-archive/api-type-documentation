@@ -71,8 +71,9 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
 
     ${isSchema ?
       html`<api-schema-document
-        .shape="${type}"
         .amf="${amf}"
+        .mediaType="${mediaType}"
+        .shape="${type}"
         ?compatibility="${compatibility}"></api-schema-document>` :
       html`<api-type-document
         .amf="${amf}"
