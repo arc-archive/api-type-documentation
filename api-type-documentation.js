@@ -59,15 +59,15 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
     } = this;
     return html `<style>${this.styles}</style>
     ${aware ?
-      html`<raml-aware @api-changed="${this._apiChangedHandler}" scope="${aware}"></raml-aware>` : undefined}
+      html`<raml-aware @api-changed="${this._apiChangedHandler}" scope="${aware}"></raml-aware>` : ''}
 
     ${typeTitle ? html`<div class="title" role="heading" aria-level="${headerLevel}">${typeTitle}</div>` : ''}
     ${hasCustomProperties ?
-      html`<api-annotation-document .amf="${amf}" .shape="${type}"></api-annotation-document>` : undefined}
+      html`<api-annotation-document .amf="${amf}" .shape="${type}"></api-annotation-document>` : ''}
 
     ${this.description ? html`<arc-marked .markdown="${this.description}" sanitize>
       <div slot="markdown-html" class="markdown-html" part="markdown-html"></div>
-    </arc-marked>` : undefined}
+    </arc-marked>` : ''}
 
     ${isSchema ?
       html`<api-schema-document
