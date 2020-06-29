@@ -200,6 +200,10 @@ describe('<api-type-documentation>', function() {
           const node = element.shadowRoot.querySelector('api-schema-document');
           assert.notOk(node);
         });
+
+        it('api-type-document renders with renderReadOnly set to true', async () => {
+          assert.isTrue(element.shadowRoot.querySelector('api-type-document').renderReadOnly)
+        });
       });
 
       describe('Schema object - ' + item[0], () => {
