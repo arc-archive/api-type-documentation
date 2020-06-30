@@ -82,7 +82,8 @@ class ApiTypeDocumentation extends AmfHelperMixin(LitElement) {
         .mediaType="${mediaType}"
         .mediaTypes="${mediaTypes}"
         ?graph="${graph}"
-        ?compatibility="${compatibility}"></api-type-document>`}`;
+        ?compatibility="${compatibility}"
+        renderreadonly></api-type-document>`}`;
   }
 
   static get properties() {
