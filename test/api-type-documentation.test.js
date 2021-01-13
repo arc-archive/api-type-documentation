@@ -1,56 +1,36 @@
-import { fixture, assert, nextFrame, aTimeout } from '@open-wc/testing';
+/* eslint-disable prefer-destructuring */
+import { fixture, assert, nextFrame, aTimeout, html } from '@open-wc/testing';
 import { AmfLoader } from './amf-loader.js';
 import '../api-type-documentation.js';
 
-describe('<api-type-documentation>', function() {
-  async function basicFixture() {
-    return (await fixture(`<api-type-documentation></api-type-documentation>`));
-  }
+/** @typedef {import('..').ApiTypeDocumentationElement} ApiTypeDocumentationElement */
 
-  async function awareFixture() {
-    return (await fixture(`<api-type-documentation aware="test"></api-type-documentation>`));
+describe('ApiTypeDocumentationElement', () => {
+  /**
+   * @returns {Promise<ApiTypeDocumentationElement>}
+   */
+  async function basicFixture() {
+    return (fixture(html`<api-type-documentation></api-type-documentation>`));
   }
 
   describe('Basic', () => {
-    it('Adds raml-aware to the DOM if aware is set', async () => {
-      const element = await awareFixture();
-      const node = element.shadowRoot.querySelector('raml-aware');
-      assert.ok(node);
-    });
-
-    it('raml-aware sets amf value', async () => {
-      const aware = document.createElement('raml-aware');
-      document.body.appendChild(aware);
-      aware.scope = 'test';
-      aware.api = [{}];
-      const element = await awareFixture();
-      await aTimeout();
-      assert.deepEqual(element.amf, [{}]);
-    });
-
-    it('raml-aware is not in the DOM by default', async () => {
-      const element = await basicFixture();
-      const node = element.shadowRoot.querySelector('raml-aware');
-      assert.notOk(node);
-    });
-
     it('api-annotation-document is not in the DOM', async () => {
       const element = await basicFixture();
-      await aTimeout();
+      await aTimeout(0);
       const node = element.shadowRoot.querySelector('api-annotation-document');
       assert.notOk(node);
     });
 
     it('marked-element is not in the DOM', async () => {
       const element = await basicFixture();
-      await aTimeout();
+      await aTimeout(0);
       const node = element.shadowRoot.querySelector('marked-element');
       assert.notOk(node);
     });
 
     it('api-schema-document is not in the DOM', async () => {
       const element = await basicFixture();
-      await aTimeout();
+      await aTimeout(0);
       const node = element.shadowRoot.querySelector('api-schema-document');
       assert.notOk(node);
     });
@@ -152,7 +132,7 @@ describe('<api-type-documentation>', function() {
         });
       });
 
-      describe('Type object - ' + item[0], () => {
+      describe(`Type object - ${item[0]}`, () => {
         let element;
         let amf;
         let type;
@@ -167,7 +147,7 @@ describe('<api-type-documentation>', function() {
           element = await basicFixture();
           element.amf = amf;
           element.type = type;
-          await aTimeout();
+          await aTimeout(0);
         });
 
         it('typeTitle is computed', () => {
@@ -206,7 +186,7 @@ describe('<api-type-documentation>', function() {
         });
       });
 
-      describe('Schema object - ' + item[0], () => {
+      describe(`Schema object - ${  item[0]}`, () => {
         let element;
         let amf;
         let type;

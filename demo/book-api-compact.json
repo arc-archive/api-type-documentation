@@ -12,6 +12,7 @@
 "@id": "#31",
 "@type": [
 "apiContract:WebAPI",
+"apiContract:API",
 "doc:RootDomainElement",
 "doc:DomainElement"
 ],
@@ -45,6 +46,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#37/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:urlTemplate"
@@ -59,6 +61,7 @@
 ],
 "sourcemaps:synthesized-field": [
 {
+"@id": "#37/source-map/synthesized-field/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#37"
@@ -129,7 +132,13 @@
 "@id": "#34",
 "@type": [
 "apiContract:Response",
+"apiContract:Message",
 "doc:DomainElement"
+],
+"apiContract:statusCode": [
+{
+"@value": "200"
+}
 ],
 "core:name": [
 {
@@ -139,11 +148,6 @@
 "core:description": [
 {
 "@value": "Get List of books"
-}
-],
-"apiContract:statusCode": [
-{
-"@value": "200"
 }
 ],
 "apiContract:payload": [
@@ -170,7 +174,7 @@
 ],
 "raml-shapes:items": [
 {
-"@id": "#15/linked_3",
+"@id": "#29/link-2076425",
 "@type": [
 "shacl:NodeShape",
 "raml-shapes:AnyShape",
@@ -180,12 +184,12 @@
 ],
 "doc:link-target": [
 {
-"@id": "#15"
+"@id": "#29"
 }
 ],
 "doc:link-label": [
 {
-"@value": "items"
+"@value": "Book"
 }
 ]
 }
@@ -203,6 +207,7 @@
 ],
 "sourcemaps:auto-generated-name": [
 {
+"@id": "#36/source-map/auto-generated-name/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#36"
@@ -217,6 +222,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#36/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#36"
@@ -231,6 +237,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#36/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#36"
@@ -255,6 +262,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#35/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#35"
@@ -279,18 +287,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "core:description"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(18,8)-(19,0)]"
-}
-]
-},
-{
+"@id": "#34/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#34"
@@ -299,6 +296,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(17,6)-(23,0)]"
+}
+]
+},
+{
+"@id": "#34/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "core:description"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(18,8)-(19,0)]"
 }
 ]
 }
@@ -315,6 +325,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#33/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "core:name"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(15,4)-(16,0)]"
+}
+]
+},
+{
+"@id": "#33/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "apiContract:returns"
@@ -327,6 +351,7 @@
 ]
 },
 {
+"@id": "#33/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#33"
@@ -335,18 +360,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(14,2)-(23,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(15,4)-(16,0)]"
 }
 ]
 }
@@ -363,18 +376,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(13,2)-(14,0)]"
-}
-]
-},
-{
+"@id": "#32/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#32"
@@ -383,6 +385,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(12,0)-(23,0)]"
+}
+]
+},
+{
+"@id": "#32/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "core:name"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(13,2)-(14,0)]"
 }
 ]
 }
@@ -399,6 +414,7 @@
 ],
 "sourcemaps:source-vendor": [
 {
+"@id": "#31/source-map/source-vendor/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#31"
@@ -413,21 +429,10 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#31/source-map/lexical/element_6",
 "sourcemaps:element": [
 {
-"@value": "core:version"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(4,0)-(5,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "apiContract:accepts"
+"@value": "apiContract:contentType"
 }
 ],
 "sourcemaps:value": [
@@ -437,30 +442,7 @@
 ]
 },
 {
-"sourcemaps:element": [
-{
-"@value": "core:description"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(5,0)-(6,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#31"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(2,0)-(23,0)]"
-}
-]
-},
-{
+"@id": "#31/source-map/lexical/element_4",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -473,6 +455,59 @@
 ]
 },
 {
+"@id": "#31/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "core:description"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(5,0)-(6,0)]"
+}
+]
+},
+{
+"@id": "#31/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "core:version"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(4,0)-(5,0)]"
+}
+]
+},
+{
+"@id": "#31/source-map/lexical/element_1",
+"sourcemaps:element": [
+{
+"@value": "apiContract:accepts"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(10,0)-(12,0)]"
+}
+]
+},
+{
+"@id": "#31/source-map/lexical/element_3",
+"sourcemaps:element": [
+{
+"@value": "amf://id#31"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(2,0)-(23,0)]"
+}
+]
+},
+{
+"@id": "#31/source-map/lexical/element_5",
 "sourcemaps:element": [
 {
 "@value": "apiContract:server"
@@ -483,18 +518,6 @@
 "@value": "[(2,0)-(3,0)]"
 }
 ]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "apiContract:contentType"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(10,0)-(12,0)]"
-}
-]
 }
 ]
 }
@@ -503,7 +526,12 @@
 ],
 "doc:version": [
 {
-"@value": "2.0.0"
+"@value": "2.3.0"
+}
+],
+"doc:root": [
+{
+"@value": true
 }
 ],
 "doc:references": [
@@ -576,6 +604,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#24/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#24"
@@ -590,6 +619,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#24/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(9,4)-(10,0)]"
+}
+]
+},
+{
+"@id": "#24/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -602,6 +645,7 @@
 ]
 },
 {
+"@id": "#24/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#24"
@@ -610,18 +654,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(7,2)-(11,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(9,4)-(10,0)]"
 }
 ]
 }
@@ -648,18 +680,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "shacl:minCount"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(10,4)-(11,0)]"
-}
-]
-},
-{
+"@id": "#23/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#23"
@@ -668,6 +689,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(7,2)-(11,0)]"
+}
+]
+},
+{
+"@id": "#23/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "shacl:minCount"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(10,4)-(11,0)]"
 }
 ]
 }
@@ -721,6 +755,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#26/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#26"
@@ -735,6 +770,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#26/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(13,4)-(14,0)]"
+}
+]
+},
+{
+"@id": "#26/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -747,6 +796,7 @@
 ]
 },
 {
+"@id": "#26/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#26"
@@ -755,18 +805,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(11,2)-(14,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(13,4)-(14,0)]"
 }
 ]
 }
@@ -793,6 +831,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#25/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#25"
@@ -883,6 +922,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#12/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#12"
@@ -897,6 +937,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#12/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(8,4)-(9,0)]"
+}
+]
+},
+{
+"@id": "#12/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -909,6 +963,7 @@
 ]
 },
 {
+"@id": "#12/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#12"
@@ -917,18 +972,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(6,2)-(9,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(8,4)-(9,0)]"
 }
 ]
 }
@@ -955,6 +998,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#11/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#11"
@@ -1016,6 +1060,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#14/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#14"
@@ -1030,6 +1075,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#14/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(11,4)-(12,0)]"
+}
+]
+},
+{
+"@id": "#14/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -1042,6 +1101,7 @@
 ]
 },
 {
+"@id": "#14/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#14"
@@ -1050,18 +1110,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(9,2)-(12,19)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(11,4)-(12,0)]"
 }
 ]
 }
@@ -1088,18 +1136,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "shacl:minCount"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(12,4)-(12,19)]"
-}
-]
-},
-{
+"@id": "#13/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#13"
@@ -1108,6 +1145,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(9,2)-(12,19)]"
+}
+]
+},
+{
+"@id": "#13/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "shacl:minCount"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(12,4)-(12,19)]"
 }
 ]
 }
@@ -1134,6 +1184,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#28/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#28"
@@ -1148,18 +1199,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(15,4)-(16,0)]"
-}
-]
-},
-{
+"@id": "#28/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#28"
@@ -1168,6 +1208,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(14,2)-(16,38)]"
+}
+]
+},
+{
+"@id": "#28/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "core:name"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(15,4)-(16,0)]"
 }
 ]
 }
@@ -1194,6 +1247,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#27/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#27"
@@ -1212,7 +1266,7 @@
 ],
 "shacl:name": [
 {
-"@value": "items"
+"@value": "type"
 }
 ],
 "core:name": [
@@ -1273,7 +1327,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_3"
+"@value": "id"
 }
 ],
 "sourcemaps:sources": [
@@ -1284,6 +1338,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#18/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#18"
@@ -1320,7 +1375,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_4"
+"@value": "name"
 }
 ],
 "sourcemaps:sources": [
@@ -1331,6 +1386,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#19/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#19"
@@ -1375,7 +1431,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_6"
+"@value": "name"
 }
 ],
 "sourcemaps:sources": [
@@ -1386,6 +1442,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#21/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#21"
@@ -1422,7 +1479,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_7"
+"@value": "dateOfBirth"
 }
 ],
 "sourcemaps:sources": [
@@ -1433,6 +1490,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#22/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#22"
@@ -1451,7 +1509,7 @@
 ],
 "core:name": [
 {
-"@value": "object_5"
+"@value": "author"
 }
 ],
 "sourcemaps:sources": [
@@ -1462,6 +1520,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#20/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "data:name"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(1,0)-(2,0)]"
+}
+]
+},
+{
+"@id": "#20/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "data:dateOfBirth"
@@ -1474,6 +1546,7 @@
 ]
 },
 {
+"@id": "#20/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#20"
@@ -1484,18 +1557,6 @@
 "@value": "[(1,0)-(2,25)]"
 }
 ]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "data:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(1,0)-(2,0)]"
-}
-]
 }
 ]
 }
@@ -1504,7 +1565,7 @@
 ],
 "core:name": [
 {
-"@value": "object_2"
+"@value": "BookExample"
 }
 ],
 "sourcemaps:sources": [
@@ -1515,18 +1576,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#17/source-map/lexical/element_3",
 "sourcemaps:element": [
 {
-"@value": "data:author"
+"@value": "data:name"
 }
 ],
 "sourcemaps:value": [
 {
-"@value": "[(5,2)-(5,38)]"
+"@value": "[(4,2)-(5,0)]"
 }
 ]
 },
 {
+"@id": "#17/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "data:id"
@@ -1539,6 +1602,20 @@
 ]
 },
 {
+"@id": "#17/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "data:author"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(5,2)-(5,38)]"
+}
+]
+},
+{
+"@id": "#17/source-map/lexical/element_2",
 "sourcemaps:element": [
 {
 "@value": "amf://id#17"
@@ -1547,18 +1624,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(3,0)-(5,38)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "data:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(4,2)-(5,0)]"
 }
 ]
 }
@@ -1580,9 +1645,10 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#16/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
-"@value": "data:BookExample"
+"@value": "amf://id#16"
 }
 ],
 "sourcemaps:value": [
@@ -1592,9 +1658,10 @@
 ]
 },
 {
+"@id": "#16/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
-"@value": "amf://id#16"
+"@value": "data:BookExample"
 }
 ],
 "sourcemaps:value": [
@@ -1626,6 +1693,7 @@
 ],
 "sourcemaps:synthesized-field": [
 {
+"@id": "#16/source-map/synthesized-field/element_0",
 "sourcemaps:element": [
 {
 "@value": "doc:strict"
@@ -1640,18 +1708,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#16/source-map/lexical/element_3",
 "sourcemaps:element": [
 {
-"@value": "doc:raw"
+"@value": "doc:structuredValue"
 }
 ],
 "sourcemaps:value": [
 {
-"@value": "[(2,0)-(5,38)]"
+"@value": "[(5,8)-(5,34)]"
 }
 ]
 },
 {
+"@id": "#16/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -1664,6 +1734,20 @@
 ]
 },
 {
+"@id": "#16/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "doc:raw"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(2,0)-(5,38)]"
+}
+]
+},
+{
+"@id": "#16/source-map/lexical/element_2",
 "sourcemaps:element": [
 {
 "@value": "amf://id#16"
@@ -1672,18 +1756,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(5,2)-(6,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "doc:structuredValue"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(5,8)-(5,34)]"
 }
 ]
 }
@@ -1698,8 +1770,9 @@
 "@type": [
 "sourcemaps:SourceMap"
 ],
-"sourcemaps:declared-element": [
+"sourcemaps:source-vendor": [
 {
+"@id": "#15/source-map/source-vendor/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#15"
@@ -1707,27 +1780,14 @@
 ],
 "sourcemaps:value": [
 {
-"@value": ""
-}
-]
-}
-],
-"sourcemaps:type-property-lexical-info": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#15"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(3,0)-(3,4)]"
+"@value": "RAML 1.0"
 }
 ]
 }
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#15/source-map/lexical/element_2",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -1740,6 +1800,20 @@
 ]
 },
 {
+"@id": "#15/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "apiContract:examples"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(4,0)-(6,0)]"
+}
+]
+},
+{
+"@id": "#15/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#15"
@@ -1752,8 +1826,9 @@
 ]
 }
 ],
-"sourcemaps:source-vendor": [
+"sourcemaps:type-property-lexical-info": [
 {
+"@id": "#15/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#15"
@@ -1761,7 +1836,7 @@
 ],
 "sourcemaps:value": [
 {
-"@value": "RAML 1.0"
+"@value": "[(3,0)-(3,4)]"
 }
 ]
 }
@@ -1772,7 +1847,7 @@
 ],
 "doc:version": [
 {
-"@value": "2.0.0"
+"@value": "2.3.0"
 }
 ],
 "doc:references": [
@@ -1808,6 +1883,7 @@
 ],
 "sourcemaps:source-vendor": [
 {
+"@id": "#5/source-map/source-vendor/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#5"
@@ -1826,7 +1902,7 @@
 ],
 "doc:version": [
 {
-"@value": "2.0.0"
+"@value": "2.3.0"
 }
 ],
 "doc:references": [
@@ -1858,7 +1934,12 @@
 ],
 "doc:version": [
 {
-"@value": "2.0.0"
+"@value": "2.3.0"
+}
+],
+"doc:root": [
+{
+"@value": false
 }
 ]
 },
@@ -1890,9 +1971,19 @@
 ],
 "doc:version": [
 {
-"@value": "2.0.0"
+"@value": "2.3.0"
+}
+],
+"doc:root": [
+{
+"@value": false
 }
 ]
+}
+],
+"doc:root": [
+{
+"@value": false
 }
 ],
 "sourcemaps:sources": [
@@ -1903,6 +1994,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#2/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#2"
@@ -1910,7 +2002,7 @@
 ],
 "sourcemaps:value": [
 {
-"@value": "[(2,0)-(5,38)]"
+"@value": "[(1,0)-(5,38)]"
 }
 ]
 }
@@ -1987,6 +2079,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#12/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#12"
@@ -2001,6 +2094,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#12/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(8,4)-(9,0)]"
+}
+]
+},
+{
+"@id": "#12/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -2013,6 +2120,7 @@
 ]
 },
 {
+"@id": "#12/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#12"
@@ -2021,18 +2129,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(6,2)-(9,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(8,4)-(9,0)]"
 }
 ]
 }
@@ -2059,6 +2155,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#11/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#11"
@@ -2120,6 +2217,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#14/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#14"
@@ -2134,6 +2232,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#14/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(11,4)-(12,0)]"
+}
+]
+},
+{
+"@id": "#14/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -2146,6 +2258,7 @@
 ]
 },
 {
+"@id": "#14/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#14"
@@ -2154,18 +2267,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(9,2)-(12,19)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(11,4)-(12,0)]"
 }
 ]
 }
@@ -2192,18 +2293,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "shacl:minCount"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(12,4)-(12,19)]"
-}
-]
-},
-{
+"@id": "#13/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#13"
@@ -2212,6 +2302,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(9,2)-(12,19)]"
+}
+]
+},
+{
+"@id": "#13/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "shacl:minCount"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(12,4)-(12,19)]"
 }
 ]
 }
@@ -2270,7 +2373,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_2"
+"@value": "name"
 }
 ],
 "sourcemaps:sources": [
@@ -2281,6 +2384,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#9/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#9"
@@ -2317,7 +2421,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_3"
+"@value": "dateOfBirth"
 }
 ],
 "sourcemaps:sources": [
@@ -2328,6 +2432,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#10/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#10"
@@ -2357,6 +2462,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#8/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "data:name"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(1,0)-(2,0)]"
+}
+]
+},
+{
+"@id": "#8/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "data:dateOfBirth"
@@ -2369,6 +2488,7 @@
 ]
 },
 {
+"@id": "#8/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#8"
@@ -2377,18 +2497,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(1,0)-(2,25)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "data:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(1,0)-(2,0)]"
 }
 ]
 }
@@ -2415,6 +2523,7 @@
 ],
 "sourcemaps:synthesized-field": [
 {
+"@id": "#8/source-map/synthesized-field/element_0",
 "sourcemaps:element": [
 {
 "@value": "doc:strict"
@@ -2429,6 +2538,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#8/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "doc:structuredValue"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(3,9)-(3,37)]"
+}
+]
+},
+{
+"@id": "#8/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "doc:raw"
@@ -2441,6 +2564,7 @@
 ]
 },
 {
+"@id": "#8/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#8"
@@ -2449,18 +2573,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(3,0)-(4,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "doc:structuredValue"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(3,9)-(3,37)]"
 }
 ]
 }
@@ -2477,6 +2589,7 @@
 ],
 "sourcemaps:auto-generated-name": [
 {
+"@id": "#7/source-map/auto-generated-name/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#7"
@@ -2491,6 +2604,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#7/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#7"
@@ -2505,6 +2619,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#7/source-map/lexical/element_2",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -2517,6 +2632,20 @@
 ]
 },
 {
+"@id": "#7/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "apiContract:examples"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(3,0)-(4,0)]"
+}
+]
+},
+{
+"@id": "#7/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#7"
@@ -2531,6 +2660,7 @@
 ],
 "sourcemaps:source-vendor": [
 {
+"@id": "#7/source-map/source-vendor/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#7"
@@ -2549,7 +2679,7 @@
 ],
 "doc:version": [
 {
-"@value": "2.0.0"
+"@value": "2.3.0"
 }
 ],
 "doc:references": [
@@ -2581,9 +2711,19 @@
 ],
 "doc:version": [
 {
-"@value": "2.0.0"
+"@value": "2.3.0"
+}
+],
+"doc:root": [
+{
+"@value": false
 }
 ]
+}
+],
+"doc:root": [
+{
+"@value": false
 }
 ],
 "sourcemaps:sources": [
@@ -2594,6 +2734,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#6/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#6"
@@ -2601,13 +2742,18 @@
 ],
 "sourcemaps:value": [
 {
-"@value": "[(2,0)-(12,19)]"
+"@value": "[(1,0)-(12,19)]"
 }
 ]
 }
 ]
 }
 ]
+}
+],
+"doc:root": [
+{
+"@value": false
 }
 ],
 "sourcemaps:sources": [
@@ -2618,6 +2764,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#1/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#1"
@@ -2625,7 +2772,7 @@
 ],
 "sourcemaps:value": [
 {
-"@value": "[(2,0)-(16,38)]"
+"@value": "[(1,0)-(16,38)]"
 }
 ]
 }
@@ -2702,6 +2849,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#12/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#12"
@@ -2716,6 +2864,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#12/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(8,4)-(9,0)]"
+}
+]
+},
+{
+"@id": "#12/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -2728,6 +2890,7 @@
 ]
 },
 {
+"@id": "#12/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#12"
@@ -2736,18 +2899,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(6,2)-(9,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(8,4)-(9,0)]"
 }
 ]
 }
@@ -2774,6 +2925,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#11/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#11"
@@ -2835,6 +2987,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#14/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#14"
@@ -2849,6 +3002,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#14/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(11,4)-(12,0)]"
+}
+]
+},
+{
+"@id": "#14/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -2861,6 +3028,7 @@
 ]
 },
 {
+"@id": "#14/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#14"
@@ -2869,18 +3037,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(9,2)-(12,19)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(11,4)-(12,0)]"
 }
 ]
 }
@@ -2907,18 +3063,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "shacl:minCount"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(12,4)-(12,19)]"
-}
-]
-},
-{
+"@id": "#13/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#13"
@@ -2927,6 +3072,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(9,2)-(12,19)]"
+}
+]
+},
+{
+"@id": "#13/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "shacl:minCount"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(12,4)-(12,19)]"
 }
 ]
 }
@@ -2985,7 +3143,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_2"
+"@value": "name"
 }
 ],
 "sourcemaps:sources": [
@@ -2996,6 +3154,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#9/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#9"
@@ -3032,7 +3191,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_3"
+"@value": "dateOfBirth"
 }
 ],
 "sourcemaps:sources": [
@@ -3043,6 +3202,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#10/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#10"
@@ -3072,6 +3232,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#8/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "data:name"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(1,0)-(2,0)]"
+}
+]
+},
+{
+"@id": "#8/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "data:dateOfBirth"
@@ -3084,6 +3258,7 @@
 ]
 },
 {
+"@id": "#8/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#8"
@@ -3092,18 +3267,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(1,0)-(2,25)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "data:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(1,0)-(2,0)]"
 }
 ]
 }
@@ -3130,6 +3293,7 @@
 ],
 "sourcemaps:synthesized-field": [
 {
+"@id": "#8/source-map/synthesized-field/element_0",
 "sourcemaps:element": [
 {
 "@value": "doc:strict"
@@ -3144,6 +3308,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#8/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "doc:structuredValue"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(3,9)-(3,37)]"
+}
+]
+},
+{
+"@id": "#8/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "doc:raw"
@@ -3156,6 +3334,7 @@
 ]
 },
 {
+"@id": "#8/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#8"
@@ -3164,18 +3343,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(3,0)-(4,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "doc:structuredValue"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(3,9)-(3,37)]"
 }
 ]
 }
@@ -3192,6 +3359,7 @@
 ],
 "sourcemaps:auto-generated-name": [
 {
+"@id": "#7/source-map/auto-generated-name/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#7"
@@ -3206,6 +3374,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#7/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#7"
@@ -3220,6 +3389,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#7/source-map/lexical/element_2",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -3232,6 +3402,20 @@
 ]
 },
 {
+"@id": "#7/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "apiContract:examples"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(3,0)-(4,0)]"
+}
+]
+},
+{
+"@id": "#7/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#7"
@@ -3246,6 +3430,7 @@
 ],
 "sourcemaps:source-vendor": [
 {
+"@id": "#7/source-map/source-vendor/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#7"
@@ -3264,7 +3449,7 @@
 ],
 "doc:version": [
 {
-"@value": "2.0.0"
+"@value": "2.3.0"
 }
 ],
 "doc:references": [
@@ -3296,9 +3481,19 @@
 ],
 "doc:version": [
 {
-"@value": "2.0.0"
+"@value": "2.3.0"
+}
+],
+"doc:root": [
+{
+"@value": false
 }
 ]
+}
+],
+"doc:root": [
+{
+"@value": false
 }
 ],
 "sourcemaps:sources": [
@@ -3309,6 +3504,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#6/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#6"
@@ -3316,7 +3512,7 @@
 ],
 "sourcemaps:value": [
 {
-"@value": "[(2,0)-(12,19)]"
+"@value": "[(1,0)-(12,19)]"
 }
 ]
 }
@@ -3387,6 +3583,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#24/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#24"
@@ -3401,6 +3598,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#24/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(9,4)-(10,0)]"
+}
+]
+},
+{
+"@id": "#24/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -3413,6 +3624,7 @@
 ]
 },
 {
+"@id": "#24/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#24"
@@ -3421,18 +3633,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(7,2)-(11,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(9,4)-(10,0)]"
 }
 ]
 }
@@ -3459,18 +3659,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "shacl:minCount"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(10,4)-(11,0)]"
-}
-]
-},
-{
+"@id": "#23/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#23"
@@ -3479,6 +3668,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(7,2)-(11,0)]"
+}
+]
+},
+{
+"@id": "#23/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "shacl:minCount"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(10,4)-(11,0)]"
 }
 ]
 }
@@ -3532,6 +3734,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#26/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#26"
@@ -3546,6 +3749,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#26/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(13,4)-(14,0)]"
+}
+]
+},
+{
+"@id": "#26/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -3558,6 +3775,7 @@
 ]
 },
 {
+"@id": "#26/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#26"
@@ -3566,18 +3784,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(11,2)-(14,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(13,4)-(14,0)]"
 }
 ]
 }
@@ -3604,6 +3810,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#25/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#25"
@@ -3694,6 +3901,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#12/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#12"
@@ -3708,6 +3916,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#12/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(8,4)-(9,0)]"
+}
+]
+},
+{
+"@id": "#12/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -3720,6 +3942,7 @@
 ]
 },
 {
+"@id": "#12/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#12"
@@ -3728,18 +3951,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(6,2)-(9,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(8,4)-(9,0)]"
 }
 ]
 }
@@ -3766,6 +3977,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#11/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#11"
@@ -3827,6 +4039,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#14/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#14"
@@ -3841,6 +4054,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#14/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(11,4)-(12,0)]"
+}
+]
+},
+{
+"@id": "#14/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -3853,6 +4080,7 @@
 ]
 },
 {
+"@id": "#14/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#14"
@@ -3861,18 +4089,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(9,2)-(12,19)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(11,4)-(12,0)]"
 }
 ]
 }
@@ -3899,18 +4115,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "shacl:minCount"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(12,4)-(12,19)]"
-}
-]
-},
-{
+"@id": "#13/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#13"
@@ -3919,6 +4124,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(9,2)-(12,19)]"
+}
+]
+},
+{
+"@id": "#13/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "shacl:minCount"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(12,4)-(12,19)]"
 }
 ]
 }
@@ -3945,6 +4163,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#28/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#28"
@@ -3959,18 +4178,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(15,4)-(16,0)]"
-}
-]
-},
-{
+"@id": "#28/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#28"
@@ -3979,6 +4187,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(14,2)-(16,38)]"
+}
+]
+},
+{
+"@id": "#28/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "core:name"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(15,4)-(16,0)]"
 }
 ]
 }
@@ -4005,6 +4226,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#27/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#27"
@@ -4084,7 +4306,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_3"
+"@value": "id"
 }
 ],
 "sourcemaps:sources": [
@@ -4095,6 +4317,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#18/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#18"
@@ -4131,7 +4354,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_4"
+"@value": "name"
 }
 ],
 "sourcemaps:sources": [
@@ -4142,6 +4365,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#19/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#19"
@@ -4186,7 +4410,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_6"
+"@value": "name"
 }
 ],
 "sourcemaps:sources": [
@@ -4197,6 +4421,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#21/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#21"
@@ -4233,7 +4458,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_7"
+"@value": "dateOfBirth"
 }
 ],
 "sourcemaps:sources": [
@@ -4244,6 +4469,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#22/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#22"
@@ -4262,7 +4488,7 @@
 ],
 "core:name": [
 {
-"@value": "object_5"
+"@value": "author"
 }
 ],
 "sourcemaps:sources": [
@@ -4273,6 +4499,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#20/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "data:name"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(1,0)-(2,0)]"
+}
+]
+},
+{
+"@id": "#20/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "data:dateOfBirth"
@@ -4285,6 +4525,7 @@
 ]
 },
 {
+"@id": "#20/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#20"
@@ -4295,18 +4536,6 @@
 "@value": "[(1,0)-(2,25)]"
 }
 ]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "data:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(1,0)-(2,0)]"
-}
-]
 }
 ]
 }
@@ -4315,7 +4544,7 @@
 ],
 "core:name": [
 {
-"@value": "object_2"
+"@value": "BookExample"
 }
 ],
 "sourcemaps:sources": [
@@ -4326,18 +4555,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#17/source-map/lexical/element_3",
 "sourcemaps:element": [
 {
-"@value": "data:author"
+"@value": "data:name"
 }
 ],
 "sourcemaps:value": [
 {
-"@value": "[(5,2)-(5,38)]"
+"@value": "[(4,2)-(5,0)]"
 }
 ]
 },
 {
+"@id": "#17/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "data:id"
@@ -4350,6 +4581,20 @@
 ]
 },
 {
+"@id": "#17/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "data:author"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(5,2)-(5,38)]"
+}
+]
+},
+{
+"@id": "#17/source-map/lexical/element_2",
 "sourcemaps:element": [
 {
 "@value": "amf://id#17"
@@ -4358,18 +4603,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(3,0)-(5,38)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "data:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(4,2)-(5,0)]"
 }
 ]
 }
@@ -4391,9 +4624,10 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#16/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
-"@value": "data:BookExample"
+"@value": "amf://id#16"
 }
 ],
 "sourcemaps:value": [
@@ -4403,9 +4637,10 @@
 ]
 },
 {
+"@id": "#16/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
-"@value": "amf://id#16"
+"@value": "data:BookExample"
 }
 ],
 "sourcemaps:value": [
@@ -4437,6 +4672,7 @@
 ],
 "sourcemaps:synthesized-field": [
 {
+"@id": "#16/source-map/synthesized-field/element_0",
 "sourcemaps:element": [
 {
 "@value": "doc:strict"
@@ -4451,18 +4687,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#16/source-map/lexical/element_3",
 "sourcemaps:element": [
 {
-"@value": "doc:raw"
+"@value": "doc:structuredValue"
 }
 ],
 "sourcemaps:value": [
 {
-"@value": "[(2,0)-(5,38)]"
+"@value": "[(5,8)-(5,34)]"
 }
 ]
 },
 {
+"@id": "#16/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -4475,6 +4713,20 @@
 ]
 },
 {
+"@id": "#16/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "doc:raw"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(2,0)-(5,38)]"
+}
+]
+},
+{
+"@id": "#16/source-map/lexical/element_2",
 "sourcemaps:element": [
 {
 "@value": "amf://id#16"
@@ -4483,18 +4735,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(5,2)-(6,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "doc:structuredValue"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(5,8)-(5,34)]"
 }
 ]
 }
@@ -4511,6 +4751,7 @@
 ],
 "sourcemaps:declared-element": [
 {
+"@id": "#29/source-map/declared-element/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#29"
@@ -4525,6 +4766,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#29/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#29"
@@ -4539,6 +4781,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#29/source-map/lexical/element_2",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -4551,6 +4794,20 @@
 ]
 },
 {
+"@id": "#29/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "apiContract:examples"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(4,0)-(6,0)]"
+}
+]
+},
+{
+"@id": "#29/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#29"
@@ -4565,6 +4822,7 @@
 ],
 "sourcemaps:source-vendor": [
 {
+"@id": "#29/source-map/source-vendor/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#29"
@@ -4641,6 +4899,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#12/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#12"
@@ -4655,6 +4914,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#12/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(8,4)-(9,0)]"
+}
+]
+},
+{
+"@id": "#12/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -4667,6 +4940,7 @@
 ]
 },
 {
+"@id": "#12/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#12"
@@ -4675,18 +4949,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(6,2)-(9,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(8,4)-(9,0)]"
 }
 ]
 }
@@ -4713,6 +4975,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#11/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#11"
@@ -4774,6 +5037,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#14/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#14"
@@ -4788,6 +5052,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#14/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "shacl:datatype"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(11,4)-(12,0)]"
+}
+]
+},
+{
+"@id": "#14/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -4800,6 +5078,7 @@
 ]
 },
 {
+"@id": "#14/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#14"
@@ -4808,18 +5087,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(9,2)-(12,19)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(11,4)-(12,0)]"
 }
 ]
 }
@@ -4846,18 +5113,7 @@
 ],
 "sourcemaps:lexical": [
 {
-"sourcemaps:element": [
-{
-"@value": "shacl:minCount"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(12,4)-(12,19)]"
-}
-]
-},
-{
+"@id": "#13/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#13"
@@ -4866,6 +5122,19 @@
 "sourcemaps:value": [
 {
 "@value": "[(9,2)-(12,19)]"
+}
+]
+},
+{
+"@id": "#13/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "shacl:minCount"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(12,4)-(12,19)]"
 }
 ]
 }
@@ -4924,7 +5193,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_2"
+"@value": "name"
 }
 ],
 "sourcemaps:sources": [
@@ -4935,6 +5204,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#9/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#9"
@@ -4971,7 +5241,7 @@
 ],
 "core:name": [
 {
-"@value": "scalar_3"
+"@value": "dateOfBirth"
 }
 ],
 "sourcemaps:sources": [
@@ -4982,6 +5252,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#10/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#10"
@@ -5011,6 +5282,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#8/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "data:name"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(1,0)-(2,0)]"
+}
+]
+},
+{
+"@id": "#8/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "data:dateOfBirth"
@@ -5023,6 +5308,7 @@
 ]
 },
 {
+"@id": "#8/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#8"
@@ -5031,18 +5317,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(1,0)-(2,25)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "data:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(1,0)-(2,0)]"
 }
 ]
 }
@@ -5069,6 +5343,7 @@
 ],
 "sourcemaps:synthesized-field": [
 {
+"@id": "#8/source-map/synthesized-field/element_0",
 "sourcemaps:element": [
 {
 "@value": "doc:strict"
@@ -5083,6 +5358,20 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#8/source-map/lexical/element_2",
+"sourcemaps:element": [
+{
+"@value": "doc:structuredValue"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(3,9)-(3,37)]"
+}
+]
+},
+{
+"@id": "#8/source-map/lexical/element_0",
 "sourcemaps:element": [
 {
 "@value": "doc:raw"
@@ -5095,6 +5384,7 @@
 ]
 },
 {
+"@id": "#8/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#8"
@@ -5103,18 +5393,6 @@
 "sourcemaps:value": [
 {
 "@value": "[(3,0)-(4,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "doc:structuredValue"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(3,9)-(3,37)]"
 }
 ]
 }
@@ -5131,6 +5409,7 @@
 ],
 "sourcemaps:declared-element": [
 {
+"@id": "#30/source-map/declared-element/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#30"
@@ -5145,6 +5424,7 @@
 ],
 "sourcemaps:type-property-lexical-info": [
 {
+"@id": "#30/source-map/type-property-lexical-info/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#30"
@@ -5159,6 +5439,7 @@
 ],
 "sourcemaps:lexical": [
 {
+"@id": "#30/source-map/lexical/element_2",
 "sourcemaps:element": [
 {
 "@value": "core:name"
@@ -5171,6 +5452,20 @@
 ]
 },
 {
+"@id": "#30/source-map/lexical/element_0",
+"sourcemaps:element": [
+{
+"@value": "apiContract:examples"
+}
+],
+"sourcemaps:value": [
+{
+"@value": "[(3,0)-(4,0)]"
+}
+]
+},
+{
+"@id": "#30/source-map/lexical/element_1",
 "sourcemaps:element": [
 {
 "@value": "amf://id#30"
@@ -5185,1263 +5480,10 @@
 ],
 "sourcemaps:source-vendor": [
 {
+"@id": "#30/source-map/source-vendor/element_0",
 "sourcemaps:element": [
 {
 "@value": "amf://id#30"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "RAML 1.0"
-}
-]
-}
-]
-}
-]
-},
-{
-"@id": "#15",
-"@type": [
-"shacl:NodeShape",
-"raml-shapes:AnyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:closed": [
-{
-"@value": false
-}
-],
-"shacl:property": [
-{
-"@id": "#23",
-"@type": [
-"shacl:PropertyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:path": [
-{
-"@id": "http://a.ml/vocabularies/data#id"
-}
-],
-"raml-shapes:range": [
-{
-"@id": "#24",
-"@type": [
-"raml-shapes:ScalarShape",
-"raml-shapes:AnyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:datatype": [
-{
-"@id": "http://www.w3.org/2001/XMLSchema#string"
-}
-],
-"shacl:name": [
-{
-"@value": "id"
-}
-],
-"core:name": [
-{
-"@value": "The ISBN number of book"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#24/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:type-property-lexical-info": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#24"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(9,4)-(9,8)]"
-}
-]
-}
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(8,4)-(9,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#24"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(7,2)-(11,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(9,4)-(10,0)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"shacl:minCount": [
-{
-"@value": 1
-}
-],
-"shacl:name": [
-{
-"@value": "id"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#23/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:minCount"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(10,4)-(11,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#23"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(7,2)-(11,0)]"
-}
-]
-}
-]
-}
-]
-},
-{
-"@id": "#25",
-"@type": [
-"shacl:PropertyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:path": [
-{
-"@id": "http://a.ml/vocabularies/data#name"
-}
-],
-"raml-shapes:range": [
-{
-"@id": "#26",
-"@type": [
-"raml-shapes:ScalarShape",
-"raml-shapes:AnyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:datatype": [
-{
-"@id": "http://www.w3.org/2001/XMLSchema#string"
-}
-],
-"shacl:name": [
-{
-"@value": "name"
-}
-],
-"core:name": [
-{
-"@value": "Book name"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#26/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:type-property-lexical-info": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#26"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(13,4)-(13,8)]"
-}
-]
-}
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(12,4)-(13,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#26"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(11,2)-(14,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(13,4)-(14,0)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"shacl:minCount": [
-{
-"@value": 1
-}
-],
-"shacl:name": [
-{
-"@value": "name"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#25/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#25"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(11,2)-(14,0)]"
-}
-]
-}
-]
-}
-]
-},
-{
-"@id": "#27",
-"@type": [
-"shacl:PropertyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:path": [
-{
-"@id": "http://a.ml/vocabularies/data#author"
-}
-],
-"raml-shapes:range": [
-{
-"@id": "#28",
-"@type": [
-"shacl:NodeShape",
-"raml-shapes:AnyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:closed": [
-{
-"@value": false
-}
-],
-"shacl:property": [
-{
-"@id": "#11",
-"@type": [
-"shacl:PropertyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:path": [
-{
-"@id": "http://a.ml/vocabularies/data#name"
-}
-],
-"raml-shapes:range": [
-{
-"@id": "#12",
-"@type": [
-"raml-shapes:ScalarShape",
-"raml-shapes:AnyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:datatype": [
-{
-"@id": "http://www.w3.org/2001/XMLSchema#string"
-}
-],
-"shacl:name": [
-{
-"@value": "name"
-}
-],
-"core:name": [
-{
-"@value": "Author name"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#12/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:type-property-lexical-info": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#12"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(8,4)-(8,8)]"
-}
-]
-}
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(7,4)-(8,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#12"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(6,2)-(9,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(8,4)-(9,0)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"shacl:minCount": [
-{
-"@value": 1
-}
-],
-"shacl:name": [
-{
-"@value": "name"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#11/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#11"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(6,2)-(9,0)]"
-}
-]
-}
-]
-}
-]
-},
-{
-"@id": "#13",
-"@type": [
-"shacl:PropertyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:path": [
-{
-"@id": "http://a.ml/vocabularies/data#dateOfbirth"
-}
-],
-"raml-shapes:range": [
-{
-"@id": "#14",
-"@type": [
-"raml-shapes:ScalarShape",
-"raml-shapes:AnyShape",
-"shacl:Shape",
-"raml-shapes:Shape",
-"doc:DomainElement"
-],
-"shacl:datatype": [
-{
-"@id": "http://www.w3.org/2001/XMLSchema#date"
-}
-],
-"shacl:name": [
-{
-"@value": "dateOfbirth"
-}
-],
-"core:name": [
-{
-"@value": "Date of birth"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#14/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:type-property-lexical-info": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#14"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(11,4)-(11,8)]"
-}
-]
-}
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(10,4)-(11,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#14"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(9,2)-(12,19)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:datatype"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(11,4)-(12,0)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"shacl:minCount": [
-{
-"@value": 0
-}
-],
-"shacl:name": [
-{
-"@value": "dateOfbirth"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#13/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "shacl:minCount"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(12,4)-(12,19)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#13"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(9,2)-(12,19)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"shacl:name": [
-{
-"@value": "author"
-}
-],
-"core:name": [
-{
-"@value": "description"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#28/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:type-property-lexical-info": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#28"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(16,4)-(16,8)]"
-}
-]
-}
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(15,4)-(16,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#28"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(14,2)-(16,38)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"shacl:minCount": [
-{
-"@value": 1
-}
-],
-"shacl:name": [
-{
-"@value": "author"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#27/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#27"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(14,2)-(16,38)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"shacl:name": [
-{
-"@value": "items"
-}
-],
-"core:name": [
-{
-"@value": "Book"
-}
-],
-"apiContract:examples": [
-{
-"@id": "#16",
-"@type": [
-"apiContract:Example",
-"doc:DomainElement"
-],
-"core:name": [
-{
-"@value": "Book"
-}
-],
-"doc:strict": [
-{
-"@value": true
-}
-],
-"doc:structuredValue": [
-{
-"@id": "#16",
-"@type": [
-"data:Object",
-"data:Node",
-"doc:DomainElement"
-],
-"data:BookExample": [
-{
-"@id": "#17",
-"@type": [
-"data:Object",
-"data:Node",
-"doc:DomainElement"
-],
-"data:id": [
-{
-"@id": "#18",
-"@type": [
-"data:Scalar",
-"data:Node",
-"doc:DomainElement"
-],
-"data:value": [
-{
-"@value": "ABC16456464"
-}
-],
-"shacl:datatype": [
-{
-"@id": "http://www.w3.org/2001/XMLSchema#string"
-}
-],
-"core:name": [
-{
-"@value": "scalar_3"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#18/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#18"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(3,6)-(3,19)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"data:name": [
-{
-"@id": "#19",
-"@type": [
-"data:Scalar",
-"data:Node",
-"doc:DomainElement"
-],
-"data:value": [
-{
-"@value": "John Smith"
-}
-],
-"shacl:datatype": [
-{
-"@id": "http://www.w3.org/2001/XMLSchema#string"
-}
-],
-"core:name": [
-{
-"@value": "scalar_4"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#19/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#19"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(4,8)-(4,18)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"data:author": [
-{
-"@id": "#20",
-"@type": [
-"data:Object",
-"data:Node",
-"doc:DomainElement"
-],
-"data:name": [
-{
-"@id": "#21",
-"@type": [
-"data:Scalar",
-"data:Node",
-"doc:DomainElement"
-],
-"data:value": [
-{
-"@value": "John Smith"
-}
-],
-"shacl:datatype": [
-{
-"@id": "http://www.w3.org/2001/XMLSchema#string"
-}
-],
-"core:name": [
-{
-"@value": "scalar_6"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#21/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#21"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(1,6)-(1,16)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"data:dateOfBirth": [
-{
-"@id": "#22",
-"@type": [
-"data:Scalar",
-"data:Node",
-"doc:DomainElement"
-],
-"data:value": [
-{
-"@value": "1965-01-25"
-}
-],
-"shacl:datatype": [
-{
-"@id": "http://www.w3.org/2001/XMLSchema#string"
-}
-],
-"core:name": [
-{
-"@value": "scalar_7"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#22/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#22"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(2,13)-(2,25)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"core:name": [
-{
-"@value": "object_5"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#20/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "data:dateOfBirth"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(2,0)-(2,25)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#20"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(1,0)-(2,25)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "data:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(1,0)-(2,0)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"core:name": [
-{
-"@value": "object_2"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#17/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "data:author"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(5,2)-(5,38)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "data:id"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(3,2)-(4,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#17"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(3,0)-(5,38)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "data:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(4,2)-(5,0)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"core:name": [
-{
-"@value": "object_1"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#16/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "data:BookExample"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(2,0)-(5,38)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#16"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(2,0)-(5,38)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"doc:raw": [
-{
-"@value": "BookExample:\n  id: 'ABC16456464'\n  name: John Smith\n  author: !include Author_Example.raml"
-}
-],
-"doc:location": [
-{
-"@value": "file://demo/00210130b/Book_Example.raml"
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#16/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:synthesized-field": [
-{
-"sourcemaps:element": [
-{
-"@value": "doc:strict"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "true"
-}
-]
-}
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "doc:raw"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(2,0)-(5,38)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(5,2)-(6,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#16"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(5,2)-(6,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "doc:structuredValue"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(5,8)-(5,34)]"
-}
-]
-}
-]
-}
-]
-}
-],
-"sourcemaps:sources": [
-{
-"@id": "#15/source-map",
-"@type": [
-"sourcemaps:SourceMap"
-],
-"sourcemaps:declared-element": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#15"
-}
-],
-"sourcemaps:value": [
-{
-"@value": ""
-}
-]
-}
-],
-"sourcemaps:type-property-lexical-info": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#15"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(3,0)-(3,4)]"
-}
-]
-}
-],
-"sourcemaps:lexical": [
-{
-"sourcemaps:element": [
-{
-"@value": "core:name"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(2,0)-(3,0)]"
-}
-]
-},
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#15"
-}
-],
-"sourcemaps:value": [
-{
-"@value": "[(2,0)-(16,38)]"
-}
-]
-}
-],
-"sourcemaps:source-vendor": [
-{
-"sourcemaps:element": [
-{
-"@value": "amf://id#15"
 }
 ],
 "sourcemaps:value": [
