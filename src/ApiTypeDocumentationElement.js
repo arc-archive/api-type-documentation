@@ -21,6 +21,7 @@ export class ApiTypeDocumentationElement extends AmfHelperMixin(LitElement) {
       }
 
       .title {
+        color: var(--arc-font-headline-color);
         font-size: var(--arc-font-headline-font-size);
         font-weight: var(--arc-font-headline-font-weight);
         letter-spacing: var(--arc-font-headline-letter-spacing);
