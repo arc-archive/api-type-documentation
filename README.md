@@ -4,7 +4,7 @@
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/advanced-rest-client/api-type-documentation)
 
-# api-type-documentation
+# &lt;api-type-documentation&gt;
 
 A documentation module for RAML types (resources) using AMF ld+json data model.
 
@@ -16,7 +16,8 @@ For compatibility with previous model version use `3.x.x` version of the compone
 ## Usage
 
 ### Installation
-```
+
+```sh
 npm install --save @api-components/api-type-documentation
 ```
 
@@ -66,10 +67,11 @@ npm start
 ```
 
 ### Running the tests
+
 ```sh
 npm test
 ```
 
-### API components
+## API components
 
-This components is a part of [API components ecosystem](https://elements.advancedrestclient.com/)
+This component is a part of [API components ecosystem](https://elements.advancedrestclient.com/)
