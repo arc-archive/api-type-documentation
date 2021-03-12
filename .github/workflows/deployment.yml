@@ -3,6 +3,10 @@ env:
   FORCE_COLOR: 1
 on:
   push:
+    branches:
+      - master
+      - main
+      - develop
   pull_request:
     branches:
       - master
