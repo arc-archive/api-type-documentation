@@ -500,3 +500,14 @@
 * [ci skip] automated merge master->stage. syncing main branches [1db411a](https://github.com/advanced-rest-client/api-type-documentation/commit/1db411acf22d1c59c69d91f39d9ba40f6acf1d62) by Ci agent
 
 
+<a name="4.1.1"></a>
+## [4.1.1](https://github.com/advanced-rest-client/api-type-documentation/compare/4.0.4...4.1.1) (2021-03-12)
+
+### Update
+
+* updating dependencies and bumpping version [3d849b3](https://github.com/advanced-rest-client/api-type-documentation/commit/3d849b3e796e7d4d7e440b4135d9ff901e1cc74f) by Pawel Psztyc
+* [ci skip] automated merge master->stage. syncing main branches [fd57ee9](https://github.com/advanced-rest-client/api-type-documentation/commit/fd57ee9bea7137e6247c4b61ddc31b1fac4096b4) by Ci agent
+* upgrading dependencies and types [62b73cc](https://github.com/advanced-rest-client/api-type-documentation/commit/62b73ccd619fc9dff2fe9d02df620ee709798b40) by Pawel Psztyc
+* [ci skip] automated merge master->stage. syncing main branches [1db411a](https://github.com/advanced-rest-client/api-type-documentation/commit/1db411acf22d1c59c69d91f39d9ba40f6acf1d62) by Ci agent
+
+
