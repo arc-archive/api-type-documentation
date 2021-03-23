@@ -184,6 +184,11 @@ describe('ApiTypeDocumentationElement', () => {
         it('api-type-document renders with renderReadOnly set to true', async () => {
           assert.isTrue(element.shadowRoot.querySelector('api-type-document').renderReadOnly)
         });
+
+        it('renders the type title', async () => {
+          const node = element.shadowRoot.querySelector('.title');
+          assert.dom.equal(node, `<div aria-level="2" class="title" part="type-title" role="heading">EnurableType</div>`);
+        });
       });
 
       describe(`Schema object - ${  item[0]}`, () => {
