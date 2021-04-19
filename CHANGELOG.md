@@ -511,3 +511,9 @@
 * [ci skip] automated merge master->stage. syncing main branches [1db411a](https://github.com/advanced-rest-client/api-type-documentation/commit/1db411acf22d1c59c69d91f39d9ba40f6acf1d62) by Ci agent
 
 
+
+<a name="4.1.2"></a>
+
+### Features
+
+* Fixes [#27](https://github.com/advanced-rest-client/api-documentation/issues/27) - Add CSS part to the title element.

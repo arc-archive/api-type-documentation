@@ -221,7 +221,7 @@ export class ApiTypeDocumentationElement extends AmfHelperMixin(LitElement) {
       headerLevel
     } = this;
     return html `<style>${this.styles}</style>
-    ${typeTitle ? html`<div class="title" role="heading" aria-level="${headerLevel}">${typeTitle}</div>` : ''}
+    ${typeTitle ? html`<div class="title" role="heading" aria-level="${headerLevel}" part="type-title">${typeTitle}</div>` : ''}
     ${hasCustomProperties ?
       html`<api-annotation-document .amf="${amf}" .shape="${type}"></api-annotation-document>` : ''}
 
