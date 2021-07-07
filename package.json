@@ -32,7 +32,7 @@
     "@api-components/api-annotation-document": "^4.1.0",
     "@api-components/api-resource-example-document": "^4.1.2",
     "@api-components/api-schema-document": "^4.2.0",
-    "@api-components/api-type-document": "^4.2.4",
+    "@api-components/api-type-document": "^4.2.13",
     "lit-element": "^2.4.0"
   },
   "devDependencies": {
