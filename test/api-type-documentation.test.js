@@ -189,6 +189,11 @@ describe('ApiTypeDocumentationElement', () => {
           const node = element.shadowRoot.querySelector('.title');
           assert.dom.equal(node, `<div aria-level="2" class="title" part="type-title" role="heading">EnurableType</div>`);
         });
+
+        it('noMediaSelector property should be set on api-type-document', () => {
+          const typeDocument = element.shadowRoot.querySelector('api-type-document');
+          assert.isTrue(typeDocument.noMediaSelector);
+        });
       });
 
       describe(`Schema object - ${  item[0]}`, () => {
