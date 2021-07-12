@@ -244,7 +244,6 @@ export class ApiTypeDocumentationElement extends AmfHelperMixin(LitElement) {
         ?graph="${graph}"
         ?compatibility="${compatibility}"
         renderReadonly
-        noMediaSelector
         ></api-type-document>`}`;
   }
 }
