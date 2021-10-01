@@ -1,10 +1,8 @@
-[![Published on NPM](https://img.shields.io/npm/v/@api-components/api-type-documentation.svg)](https://www.npmjs.com/package/@api-components/api-type-documentation)
+# DEPRECATED
 
-[![Build Status](https://travis-ci.org/advanced-rest-client/api-type-documentation.svg?branch=stage)](https://travis-ci.org/advanced-rest-client/api-type-documentation)
+This component is being deprecated. The code base has been moved to [api-documentation](https://github.com/advanced-rest-client/api-documentation) module. This module will be archived when [PR 37](https://github.com/advanced-rest-client/api-documentation/pull/37) is merged.
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/advanced-rest-client/api-type-documentation)
-
-# &lt;api-type-documentation&gt;
+-----
 
 A documentation module for RAML types (resources) using AMF ld+json data model.
 
